@@ -7,7 +7,10 @@
   --black2: #373234;
   --mint: #c8d7d2;
   --white1: #f4f2f0;
-  --red: #d84339;
+  --red1: #d84339;
+  --purple1: #1c0122;
+  --purple2: #370022;
+  --blue1: #02E1DC;
 }
 
 * {
@@ -20,4 +23,15 @@ button {
 }
 
 .radial-bg{background: linear-gradient(90deg, #1c0122, #1d0122, #1f0124, #230126, #280128, #2b0128, #2e0128, #310026, #330025, #350023, #360022, #370022)
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active{
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+.text-shadow-custom{
+    text-shadow: 2.2px 2.2px 0 #02E1DC;
 }
