@@ -1,13 +1,23 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap");
+@import url(https://db.onlinewebfonts.com/c/5ad4b1648754cc586053b62f77f6dc04?family=Moderna+Condensed+Unicase+Medium);
 
 /* add website colors here  */
 :root {
---black2: #373234;
---mint: #C8D7D2;
---white1: #F4F2F0; 
---red : #D84339;
+  --black1: #262323;
+  --black2: #373234;
+  --mint: #c8d7d2;
+  --white1: #f4f2f0;
+  --red: #d84339;
 }
 
 * {
-  font-family: "Poppins", sans-serif;
+  /* font-family: "Poppins", sans-serif; */
+  font-family: "Moderna Condensed Unicase Medium";
+}
+
+button {
+  font-family: "Moderna Condensed Unicase Medium";
+}
+
+.radial-bg{background: linear-gradient(90deg, #1c0122, #1d0122, #1f0124, #230126, #280128, #2b0128, #2e0128, #310026, #330025, #350023, #360022, #370022)
 }
