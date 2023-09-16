@@ -3,3 +3,6 @@
 ```bash
 cd client -> yarn dev
 cd server -> yarn dev
+
+yarn add nodemon
+yarn add mongoose
