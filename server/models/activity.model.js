@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const blogSchema = new mongoose.Schema({
+const activitySchema = new mongoose.Schema({
   
   title: { type: String, required: true },
   
@@ -8,14 +8,14 @@ const blogSchema = new mongoose.Schema({
 
   about: { type: String},
 
-  author: { type: String, required: true, },
-
   date: { type: Date, default: Date.now, },
 
   tags: [ { type: String, }, ],
-  
+
+  location: { type: String, },
+
 });
 
-const Blog = mongoose.model('Blog', blogSchema);
+const Activity = mongoose.model('Activity', activitySchema);
 
-module.exports = Blog;
+module.exports = Activity;

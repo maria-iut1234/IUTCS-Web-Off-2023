@@ -6,3 +6,5 @@ cd server -> yarn dev
 
 yarn add nodemon
 yarn add mongoose
+
+yarn add react-router-dom
