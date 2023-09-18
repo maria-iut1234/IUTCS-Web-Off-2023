@@ -21,6 +21,7 @@ const AdminNavbar = () => {
           <Link to="/" className="flex-1 md:self-start">
             <div className="flex justify-center">
               <div className="flex justify-center items-center">
+
                 <span className="font-moderna-custom pt-1 mx-3 whitespace-nowrap text-4xl font-light text-red-700 hover:text-gray-900">
                   IUTCS LOGO GOES HERE
                 </span>
