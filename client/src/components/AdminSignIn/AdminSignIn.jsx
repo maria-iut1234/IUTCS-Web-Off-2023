@@ -27,16 +27,25 @@ function AdminSignIn() {
   return (
     <div className="flex items-center min-h-screen radial-bg">
       <div className="container mx-auto px-6">
-        <div className="max-w-lg mx-auto px-8 py-4 my-10 bg-white bg-opacity-20 rounded-lg shadow-lg backdrop-blur-xl -webkit-backdrop-blur-lg border border-opacity-30 border-white">
+        <div
+          className="max-w-lg mx-auto px-8 py-12 my-10 bg-white shadow-lg drop-shadow-xl bg-opacity-30 "
+          style={{
+            backdropFilter: "blur(20px)",
+            boxShadow: "0 0 60px rgba(2, 225, 220, 0.5)",
+          }}
+        >
           <div className="text-center">
-            <h1 className="my-3 text-5xl font-semibold text-white text-shadow-custom">
+            <h1 className="mb-6 text-5xl font-semibold text-white text-shadow-custom font-moderna-custom">
               Admin Portal
             </h1>
           </div>
-          <div className="m-7">
+          <div className="mx-7 mt-7">
             <form className="space-y-4" onSubmit={handleSubmit}>
               <div className="flex flex-col space-y-1 mb-6">
-                <label htmlFor="password" className="block text-sm text-white">
+                <label
+                  htmlFor="password"
+                  className="block text-sm text-white font-moderna-custom"
+                >
                   Email Address
                 </label>
                 <input
@@ -50,8 +59,11 @@ function AdminSignIn() {
                   required
                 />
               </div>
-              <div className="flex flex-col space-y-1 mb-6 mb-10">
-                <label htmlFor="password" className="block text-sm text-white">
+              <div className="flex flex-col space-y-1 mb-10">
+                <label
+                  htmlFor="password"
+                  className="block text-sm text-white font-moderna-custom"
+                >
                   Password
                 </label>
                 <input
@@ -66,7 +78,10 @@ function AdminSignIn() {
                 />
               </div>
               <div>
-                <Link to="" className="block text-sm text-white hover:underline hover:text-[#02E1DC]">
+                <Link
+                  to=""
+                  className="text-sm hover:text-white hover:underline text-white font-moderna-custom"
+                >
                   Forgot Your Password?
                 </Link>
               </div>

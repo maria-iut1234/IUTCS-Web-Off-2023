@@ -14,7 +14,10 @@
 }
 
 * {
-  /* font-family: "Poppins", sans-serif; */
+  font-family: "Poppins", sans-serif;
+}
+
+.font-moderna-custom{
   font-family: "Moderna Condensed Unicase Medium";
 }
 
@@ -22,7 +25,8 @@ button {
   font-family: "Moderna Condensed Unicase Medium";
 }
 
-.radial-bg{background: linear-gradient(90deg, #1c0122, #1d0122, #1f0124, #230126, #280128, #2b0128, #2e0128, #310026, #330025, #350023, #360022, #370022)
+.radial-bg{
+  background: linear-gradient(90deg, #1c0122, #26082a, #320a32, #400a39, #4e0a40, #5e0845, #6d054a, #7d004d);
 }
 
 input:-webkit-autofill,
