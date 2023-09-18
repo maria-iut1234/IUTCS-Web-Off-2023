@@ -19,7 +19,7 @@ const AdminNavbar = () => {
             <div className="flex justify-center">
               <div className="flex justify-center items-center">
                 <span className="pt-1 mx-3 whitespace-nowrap text-4xl italic font-light text-red-700 hover:text-gray-900">
-                  AisModa.
+                  IUTCS
                 </span>
               </div>
             </div>

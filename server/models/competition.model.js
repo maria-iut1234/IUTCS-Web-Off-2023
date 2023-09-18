@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
 const competitionSchema = new mongoose.Schema({
   
@@ -12,6 +12,5 @@ const competitionSchema = new mongoose.Schema({
 
 });
 
-const Competition = mongoose.model('Competition', competitionSchema);
+export default mongoose.model('Competition', competitionSchema);
 
-module.exports = Competition;
