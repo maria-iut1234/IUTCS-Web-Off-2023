@@ -25,7 +25,7 @@ function AdminSignIn() {
   };
 
   return (
-    <div className="flex items-center min-h-screen radial-bg">
+    <div className="flex items-center min-h-screen gradient-bg">
       <div className="container mx-auto px-6">
         <div
           className="max-w-lg mx-auto px-8 py-12 my-10 bg-white shadow-lg drop-shadow-xl bg-opacity-30 "
