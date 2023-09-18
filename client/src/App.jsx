@@ -3,10 +3,11 @@ import React from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
 //component imports
-import AdminSignIn from "./components/AdminSignIn/AdminSignIn";
+import AdminSignIn from "./pages/AdminSignIn";
 
 //css import
 import "./App.css";
+import AdminHomepage from "./pages/AdminHomepage";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Routes>
         {/* admin routes  */}
         <Route path="/adminsignin" element={<AdminSignIn />} />
+        <Route path="/adminhome" element={<AdminHomepage/>}/>
 
         {/* without login pages  */}
       </Routes>
