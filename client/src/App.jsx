@@ -8,6 +8,7 @@ import AdminSignIn from "./pages/AdminSignIn";
 //css import
 import "./App.css";
 import AdminHomepage from "./pages/AdminHomepage";
+import LandingPage from "./pages/LandingPage";
 import AdminBlogs from "./pages/AdminBlogs";
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
         <Route path="/adminblogs" element={<AdminBlogs/>}/>
 
         {/* without login pages  */}
+        <Route path="/home" element={<LandingPage/>}/>
       </Routes>
     </BrowserRouter>
   );
