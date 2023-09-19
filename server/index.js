@@ -5,8 +5,9 @@ import cookieParser from "cookie-parser";
 import cors from "cors";
 
 import blogRoute from "./routes/blog.routes.js";
+import achievementRoute from "./routes/achievement.routes.js";
+
 //import regRoute from "./routes/registration.route.js";
-//import achRoute from "./routes/achievements.route.js";
 //import actRoute from "./routes/activities.route.js";
 //import comRoute from "./routes/committee.route.js";
 //import leadRoute from "./routes/leaderboard.route.js";
@@ -16,7 +17,11 @@ dotenv.config();
 
 const connection = async () => {
   try {
-    await mongoose.connect(process.env.MONGO);
+    await mongoose.connect(process.env.MONGO, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+      dbName: 'iutcs', 
+    });
     console.log("Connected to database successfully!");
   } catch (error) {
     console.log(error);
@@ -28,8 +33,9 @@ app.use(cookieParser());
 app.use(cors({origin:"http://localhost:5173", credentials: true}));
 
 app.use("/iutcs/blog", blogRoute);
+app.use("/iutcs/achievement", achievementRoute);
+
 //app.use("/iutcs/registration", regRoute);
-//app.use("/iutcs/achievements", achRoute);
 //app.use("/iutcs/activites", actRoute);
 //app.use("/iutcs/committee", comRoute);
 //app.use("/iutcs/leaderboard", leadRoute);

@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
 const achievementSchema = new mongoose.Schema({
   
@@ -14,8 +14,9 @@ const achievementSchema = new mongoose.Schema({
 
   teamMembers: { type: String, required: true },
 
-});
+},
+{ collection: 'achievements' }
+);
 
-const Achievement = mongoose.model('Achievement', achievementSchema);
+export default mongoose.model('Achievement', achievementSchema);
 
-module.exports = Achievement;

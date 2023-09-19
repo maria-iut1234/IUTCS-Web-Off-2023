@@ -15,7 +15,15 @@
 
 * {
   font-family: "Poppins", sans-serif;
+  margin:0;
+  padding:0;
 }
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
 
 .font-moderna-custom{
   font-family: "Moderna Condensed Unicase Medium";
@@ -25,7 +33,7 @@ button {
   font-family: "Moderna Condensed Unicase Medium";
 }
 
-.radial-bg{
+.gradient-bg{
   background: linear-gradient(90deg, #1c0122, #26082a, #320a32, #400a39, #4e0a40, #5e0845, #6d054a, #7d004d);
 }
 

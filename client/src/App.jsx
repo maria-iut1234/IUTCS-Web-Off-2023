@@ -9,6 +9,7 @@ import AdminSignIn from "./pages/AdminSignIn";
 import "./App.css";
 import AdminHomepage from "./pages/AdminHomepage";
 import LandingPage from "./pages/LandingPage";
+import AdminBlogs from "./pages/AdminBlogs";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         {/* admin routes  */}
         <Route path="/adminsignin" element={<AdminSignIn />} />
         <Route path="/adminhome" element={<AdminHomepage/>}/>
+        <Route path="/adminblogs" element={<AdminBlogs/>}/>
 
         {/* without login pages  */}
         <Route path="/home" element={<LandingPage/>}/>

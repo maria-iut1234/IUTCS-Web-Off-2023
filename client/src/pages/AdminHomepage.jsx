@@ -1,12 +1,14 @@
-import React from 'react'
-import AdminNavbar from '../components/AdminNavbar'
+import React from "react";
+import AdminNavbar from "../components/AdminNavbar";
 
 const AdminHomepage = () => {
   return (
     <>
-        <AdminNavbar/>
+      <div className="flex flex-col min-h-screen gradient-bg bg-cover bg-fixed bg-center">
+        <AdminNavbar />
+      </div>
     </>
-  )
-}
+  );
+};
 
-export default AdminHomepage
+export default AdminHomepage;
