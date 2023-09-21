@@ -7,6 +7,7 @@ import cors from "cors";
 import blogRoute from "./routes/blog.routes.js";
 import achievementRoute from "./routes/achievement.routes.js";
 import activityRoute from "./routes/activity.routes.js";
+import adminRoute from "./routes/admin.routes.js";
 
 //import regRoute from "./routes/registration.routes.js";
 //import comRoute from "./routes/committee.routes.js";
@@ -35,6 +36,7 @@ app.use(cors({origin:"http://localhost:5173", credentials: true}));
 app.use("/iutcs/blog", blogRoute);
 app.use("/iutcs/achievement", achievementRoute);
 app.use("/iutcs/activity", activityRoute);
+app.use("/iutcs/admin", adminRoute);
 
 //app.use("/iutcs/registration", regRoute);
 //app.use("/iutcs/committee", comRoute);
