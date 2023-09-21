@@ -2,7 +2,7 @@ import mongoose from 'mongoose';
 
 const activitySchema = new mongoose.Schema({
   
-  acticity_id: { type: String, required: true},
+  activity_id: { type: String, required: true},
 
   title: { type: String, required: true },
   
@@ -17,5 +17,5 @@ const activitySchema = new mongoose.Schema({
   location: { type: String, },
 
 });
-
+ 
 export default mongoose.model('Activity', activitySchema);

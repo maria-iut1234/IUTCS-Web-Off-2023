@@ -6,11 +6,11 @@ import cors from "cors";
 
 import blogRoute from "./routes/blog.routes.js";
 import achievementRoute from "./routes/achievement.routes.js";
+import activityRoute from "./routes/activity.routes.js";
 
-//import regRoute from "./routes/registration.route.js";
-//import actRoute from "./routes/activities.route.js";
-//import comRoute from "./routes/committee.route.js";
-//import leadRoute from "./routes/leaderboard.route.js";
+//import regRoute from "./routes/registration.routes.js";
+//import comRoute from "./routes/committee.routes.js";
+//import leadRoute from "./routes/leaderboard.routes.js";
 
 const app = express();
 dotenv.config();
@@ -34,9 +34,9 @@ app.use(cors({origin:"http://localhost:5173", credentials: true}));
 
 app.use("/iutcs/blog", blogRoute);
 app.use("/iutcs/achievement", achievementRoute);
+app.use("/iutcs/activity", activityRoute);
 
 //app.use("/iutcs/registration", regRoute);
-//app.use("/iutcs/activites", actRoute);
 //app.use("/iutcs/committee", comRoute);
 //app.use("/iutcs/leaderboard", leadRoute);
 
