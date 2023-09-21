@@ -2,6 +2,8 @@ import mongoose from 'mongoose';
 
 const leaderboardSchema = new mongoose.Schema({
 
+  leaderboard_id: { type: String, required: true},
+
   participantName: { type: String, required: true, },
 
   university: { type: String, required: true, },

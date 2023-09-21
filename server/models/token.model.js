@@ -1,6 +1,9 @@
 import mongoose from 'mongoose';
 
 const tokenSchema = new mongoose.Schema({
+
+  token_id: { type: String, required: true},
+
   token: { type: String, required: true, },
 
   user: {  },

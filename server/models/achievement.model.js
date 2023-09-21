@@ -2,6 +2,8 @@ import mongoose from 'mongoose';
 
 const achievementSchema = new mongoose.Schema({
   
+  achievement_id: { type: String, required: true},
+
   title: { type: String, required: true },
 
   awards: { type: String },
