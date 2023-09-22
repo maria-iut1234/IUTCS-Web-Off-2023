@@ -38,14 +38,26 @@ const AdminNavbar = () => {
             }`}
           >
             <li>
-              <Link to="/adminhome" className={`${linkClass}`}>
+              <Link to="/admin/home" className={`${linkClass}`}>
                 Home
               </Link>
             </li>
 
             <li>
-              <Link to="/adminblogs" className={`${linkClass}`}>
+              <Link to="/admin/blogs" className={`${linkClass}`}>
                 Blogs
+              </Link>
+            </li>
+
+            <li>
+              <Link to="/admin/executives" className={`${linkClass}`}>
+                Executives
+              </Link>
+            </li>
+
+            <li>
+              <Link to="/admin/aboutus" className={`${linkClass}`}>
+                About Us
               </Link>
             </li>
           </ul>
