@@ -10,13 +10,13 @@
   --red1: #d84339;
   --purple1: #1c0122;
   --purple2: #370022;
-  --blue1: #02E1DC;
+  --blue1: #02e1dc;
 }
 
 * {
   font-family: "Poppins", sans-serif;
-  margin:0;
-  padding:0;
+  margin: 0;
+  padding: 0;
 }
 
 body {
@@ -24,12 +24,11 @@ body {
   padding: 0;
 }
 
-
-.font-moderna-custom{
+.font-moderna-custom {
   font-family: "Moderna Condensed Unicase Medium";
 }
 
-.font-poppins-custom{
+.font-poppins-custom {
   font-family: "Poppins", sans-serif;
 }
 
@@ -37,17 +36,45 @@ button {
   font-family: "Moderna Condensed Unicase Medium";
 }
 
-.admin-gradient-bg{
-  background: linear-gradient(90deg, #1c0122, #26082a, #320a32, #400a39, #4e0a40, #5e0845, #6d054a, #7d004d);
+.admin-gradient-bg {
+  background: linear-gradient(
+    90deg,
+    #1c0122,
+    #26082a,
+    #320a32,
+    #400a39,
+    #4e0a40,
+    #5e0845,
+    #6d054a,
+    #7d004d
+  );
+}
+
+.user-gradient-bg {
+  background: linear-gradient(
+    90deg,
+    #00002b,
+    #010530,
+    #010b35,
+    #000f3a,
+    #00133f,
+    #001645,
+    #00194a,
+    #001b4f,
+    #001e55,
+    #00215b,
+    #002460,
+    #002766
+  );
 }
 
 input:-webkit-autofill,
-input:-webkit-autofill:hover, 
-input:-webkit-autofill:focus, 
-input:-webkit-autofill:active{
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
   transition: background-color 5000s ease-in-out 0s;
 }
 
-.text-shadow-custom{
-    text-shadow: 2.2px 2.2px 0 #02E1DC;
+.text-shadow-custom {
+  text-shadow: 2.2px 2.2px 0 #02e1dc;
 }
