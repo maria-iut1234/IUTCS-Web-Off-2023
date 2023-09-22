@@ -25,10 +25,10 @@ const BlogCard = ({ imageURL, header, description, author, dateOfCreation }) => 
             />
             <div>
               <p className="font-semibold text-gray-700 text-sm capitalize">
-                {author} {/* Use the author prop here */}
+                {author}
               </p>
               <p className="text-gray-600 text-xs">
-                {dateOfCreation} {/* Use the dateOfCreation prop here */}
+                {dateOfCreation}
               </p>
             </div>
           </div>
