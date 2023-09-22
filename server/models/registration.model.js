@@ -10,7 +10,7 @@ const registrationSchema = new mongoose.Schema({
 
   email: { type: String, required: true  },
 
-  phone: { type: Date, required: true },
+  phone: { type: Date,  },
 
 });
 

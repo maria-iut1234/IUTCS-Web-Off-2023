@@ -6,9 +6,13 @@ const tokenSchema = new mongoose.Schema({
 
   token: { type: String, required: true, },
 
-  user: {  },
+  user: { type: mongoose.Schema.Types.ObjectId, ref: 'Registration', required: true },
 
   createdAt: { type: Date, default: Date.now, },
+
+  expiresAt: { type: Date,  },
+
+  isActive: { type: Boolean, default: true },
 
 });
 
