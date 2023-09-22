@@ -4,13 +4,14 @@ import dotenv from "dotenv";
 import cookieParser from "cookie-parser";
 import cors from "cors";
 
-import blogRoute from "./routes/blog.routes.js";
 import achievementRoute from "./routes/achievement.routes.js";
 import activityRoute from "./routes/activity.routes.js";
 import adminRoute from "./routes/admin.routes.js";
+import announcementRoute from "./routes/announcement.routes.js";
+import blogRoute from "./routes/blog.routes.js";
+import committeeRoute from "./routes/committee.routes.js";
 
 //import regRoute from "./routes/registration.routes.js";
-//import comRoute from "./routes/committee.routes.js";
 //import leadRoute from "./routes/leaderboard.routes.js";
 
 const app = express();
@@ -33,13 +34,14 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(cors({origin:"http://localhost:5173", credentials: true}));
 
-app.use("/iutcs/blog", blogRoute);
 app.use("/iutcs/achievement", achievementRoute);
 app.use("/iutcs/activity", activityRoute);
 app.use("/iutcs/admin", adminRoute);
+app.use("/iutcs/announcement", announcementRoute);
+app.use("/iutcs/blog", blogRoute);
+app.use("/iutcs/committee", committeeRoute);
 
 //app.use("/iutcs/registration", regRoute);
-//app.use("/iutcs/committee", comRoute);
 //app.use("/iutcs/leaderboard", leadRoute);
 
 app.use((err, req, res, next)=>{
