@@ -5,6 +5,7 @@ import BlogEditButtons from "../components/BlogEditButtons";
 const SingleBlogPage = () => {
   const [blogData, setBlogData] = useState(null);
   const admin = true; //CHECK FOR ADMIN
+  const bgClass = admin? "admin-gradient-bg" : "user-gradient-bg"
 
   useEffect(() => {
     const fetchBlogData = async () => {
@@ -33,7 +34,7 @@ const SingleBlogPage = () => {
   }, []);
 
   return (
-    <div className="flex flex-col min-h-screen admin-gradient-bg bg-cover bg-fixed bg-center">
+    <div className={`flex flex-col min-h-screen ${bgClass} bg-cover bg-fixed bg-center`}>
       <AdminNavbar />
       <div className="w-full mx-auto">
         <main className="mt-10">
@@ -59,7 +60,7 @@ const SingleBlogPage = () => {
               >
                 {blogData && blogData.blogTag}
               </a>
-              <h2 className="text-4xl font-semibold text-white leading-tight">
+              <h2 className="text-xl md:text-4xl font-semibold text-white leading-tight">
                 {blogData && blogData.blogTitle}
               </h2>
               <div className="flex mt-3">
@@ -80,8 +81,8 @@ const SingleBlogPage = () => {
           </div>
 
           {admin && (<BlogEditButtons blogContent={blogData}/>)}
-
-          <div className="px-4 mt-12 text-white mx-auto text-lg leading-relaxed pb-6">
+          
+          <div className="px-4 mt-4 text-white mx-auto text-lg leading-relaxed pb-6">
             {blogData && blogData.blogContent}
           </div>
         </main>
