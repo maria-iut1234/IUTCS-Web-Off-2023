@@ -13,6 +13,8 @@ import AdminBlogs from "./pages/AdminBlogs";
 import SingleBlogPage from "./pages/SingleBlogPage";
 import AdminAboutUsPage from "./pages/AdminAboutUsPage";
 import UserAboutUsPage from "./pages/UserAboutUsPage";
+import AdminExecutivesInfoPage from "./pages/AdminExecutivesInfoPage";
+import UsersExecutiveInfoPage from "./pages/UserExecutiveInfoPage";
 
 function App() {
   return (
@@ -23,11 +25,14 @@ function App() {
         <Route path="/admin/home" element={<AdminHomepage/>}/>
         <Route path="/admin/blogs" element={<AdminBlogs/>}/>
         <Route path="/admin/aboutus" element={<AdminAboutUsPage/>}/>
+        <Route path="/admin/executives" element={<AdminExecutivesInfoPage/>}/>
         <Route path="/admin/blogs/1" element={<SingleBlogPage/>}/> {/* HARDCODED ID FOR NOW */}
 
         {/* without login pages  */}
         <Route path="/home" element={<LandingPage/>}/>
+        <Route path="/executives" element={<UsersExecutiveInfoPage/>}/>
         <Route path="/aboutus" element={<UserAboutUsPage/>}/>
+        <Route path="/blogs/1" element={<SingleBlogPage/>}/> {/* HARDCODED ID FOR NOW */}
       </Routes>
     </BrowserRouter>
   );
