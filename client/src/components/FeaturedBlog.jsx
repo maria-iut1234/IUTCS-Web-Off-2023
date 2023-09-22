@@ -31,7 +31,7 @@ const FeaturedBlog = ({
           <span className="px-4 py-1 bg-black text-gray-200 inline-flex items-center justify-center mb-2">
             {blogTag}
           </span>
-          <h2 className="text-4xl font-semibold text-gray-100 leading-tight">
+          <h2 className="text-xl md:text-4xl font-semibold text-gray-100 leading-tight">
             {blogTitle}
           </h2>
           <div className="flex mt-3">

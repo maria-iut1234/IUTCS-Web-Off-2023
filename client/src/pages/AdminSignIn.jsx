@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import backgroundImage from "../assets/iutcs_logo_dark.jpg";
 import { Link } from "react-router-dom";
 
 function AdminSignIn() {

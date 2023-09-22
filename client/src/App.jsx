@@ -11,10 +11,10 @@ import AdminHomepage from "./pages/AdminHomepage";
 import LandingPage from "./pages/LandingPage";
 import AdminBlogs from "./pages/AdminBlogs";
 import SingleBlogPage from "./pages/SingleBlogPage";
-import AdminAboutUsPage from "./pages/AdminAboutUsPage";
-import UserAboutUsPage from "./pages/UserAboutUsPage";
-import AdminExecutivesInfoPage from "./pages/AdminExecutivesInfoPage";
-import UsersExecutiveInfoPage from "./pages/UserExecutiveInfoPage";
+import UserAboutUsPage from "./pages/AboutUsPage";
+import ExecutivesInfoPage from "./pages/ExecutivesInfoPage";
+import EditBlogPage from "./pages/EditBlogPage";
+import AboutUsPage from "./pages/AboutUsPage";
 
 function App() {
   return (
@@ -24,14 +24,17 @@ function App() {
         <Route path="/admin/signin" element={<AdminSignIn />} />
         <Route path="/admin/home" element={<AdminHomepage/>}/>
         <Route path="/admin/blogs" element={<AdminBlogs/>}/>
-        <Route path="/admin/aboutus" element={<AdminAboutUsPage/>}/>
-        <Route path="/admin/executives" element={<AdminExecutivesInfoPage/>}/>
+        <Route path="/admin/blogs" element={<AdminBlogs/>}/>
+        <Route path="/admin/aboutus" element={<AboutUsPage/>}/>
+        <Route path="/admin/executives" element={<ExecutivesInfoPage/>}/>
+        <Route path="/admin/blogs/1/edit" element={<EditBlogPage/>}/> {/* HARDCODED ID FOR NOW */}
         <Route path="/admin/blogs/1" element={<SingleBlogPage/>}/> {/* HARDCODED ID FOR NOW */}
 
         {/* without login pages  */}
+        <Route path="/aboutus" element={<AboutUsPage/>}/>
         <Route path="/home" element={<LandingPage/>}/>
-        <Route path="/executives" element={<UsersExecutiveInfoPage/>}/>
-        <Route path="/aboutus" element={<UserAboutUsPage/>}/>
+        <Route path="/executives" element={<ExecutivesInfoPage/>}/>
+        <Route path="/aboutus" element={<AboutUsPage/>}/>
         <Route path="/blogs/1" element={<SingleBlogPage/>}/> {/* HARDCODED ID FOR NOW */}
       </Routes>
     </BrowserRouter>

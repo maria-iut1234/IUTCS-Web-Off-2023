@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import logo from "../assets/IUTCS_transparent.png";
 
 const AdminNavbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -16,15 +17,12 @@ const AdminNavbar = () => {
       className="shadow-md border-gray-100 drop-shadow-xl"
       style={{ boxShadow: "0px 0px 20px rgba(2, 225, 220, 0.5)" }}
     >
-      <div className="max-w-7xl mx-auto my-5 px-4 sm:px-6">
+      <div className="max-w-xs mx-auto px-4 sm:px-6">
         <div className="flex flex-col-reverse md:flex-row min-w-full py-6 space-y-8 justify-center md:justify-between md:space-x-10">
           <Link to="/" className="flex-1 md:self-start">
-            <div className="flex justify-center">
-              <div className="flex justify-center items-center">
-
-                <span className="font-moderna-custom pt-1 mx-3 whitespace-nowrap text-4xl font-light text-red-700 hover:text-gray-900">
-                  IUTCS LOGO GOES HERE
-                </span>
+            <div className="flex justify-center max-h-md">
+              <div className="flex justify-center items-center ">
+                <img src={logo} alt="Logo" className="" />
               </div>
             </div>
           </Link>
