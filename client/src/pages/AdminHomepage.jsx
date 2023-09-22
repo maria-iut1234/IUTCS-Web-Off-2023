@@ -4,7 +4,7 @@ import AdminNavbar from "../components/AdminNavbar";
 const AdminHomepage = () => {
   return (
     <>
-      <div className="flex flex-col min-h-screen gradient-bg bg-cover bg-fixed bg-center">
+      <div className="flex flex-col min-h-screen admin-gradient-bg bg-cover bg-fixed bg-center">
         <AdminNavbar />
       </div>
     </>

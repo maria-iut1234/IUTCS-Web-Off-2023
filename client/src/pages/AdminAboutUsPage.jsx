@@ -1,14 +1,13 @@
 import React from "react";
 import AdminNavbar from "../components/AdminNavbar";
-import BlogFeed from "../components/BlogFeed";
 
-const AdminBlogs = () => {
+const AboutPage = () => {
   return (
     <div className="flex flex-col min-h-screen admin-gradient-bg bg-cover bg-fixed bg-center">
-        <AdminNavbar/>
-        <BlogFeed/>
+      <AdminNavbar />
+      {/* about component here  */}
     </div>
   );
 };
 
-export default AdminBlogs;
+export default AboutPage;

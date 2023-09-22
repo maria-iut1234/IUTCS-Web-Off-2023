@@ -29,11 +29,15 @@ body {
   font-family: "Moderna Condensed Unicase Medium";
 }
 
+.font-poppins-custom{
+  font-family: "Poppins", sans-serif;
+}
+
 button {
   font-family: "Moderna Condensed Unicase Medium";
 }
 
-.gradient-bg{
+.admin-gradient-bg{
   background: linear-gradient(90deg, #1c0122, #26082a, #320a32, #400a39, #4e0a40, #5e0845, #6d054a, #7d004d);
 }
 
