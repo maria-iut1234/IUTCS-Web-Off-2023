@@ -1,6 +1,6 @@
 //react stuff
 import React from "react";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 //component imports
 import AdminSignIn from "./pages/AdminSignIn";
@@ -10,18 +10,24 @@ import "./App.css";
 import AdminHomepage from "./pages/AdminHomepage";
 import LandingPage from "./pages/LandingPage";
 import AdminBlogs from "./pages/AdminBlogs";
+import SingleBlogPage from "./pages/SingleBlogPage";
+import AdminAboutUsPage from "./pages/AdminAboutUsPage";
+import UserAboutUsPage from "./pages/UserAboutUsPage";
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
         {/* admin routes  */}
-        <Route path="/adminsignin" element={<AdminSignIn />} />
-        <Route path="/adminhome" element={<AdminHomepage/>}/>
-        <Route path="/adminblogs" element={<AdminBlogs/>}/>
+        <Route path="/admin/signin" element={<AdminSignIn />} />
+        <Route path="/admin/home" element={<AdminHomepage/>}/>
+        <Route path="/admin/blogs" element={<AdminBlogs/>}/>
+        <Route path="/admin/aboutus" element={<AdminAboutUsPage/>}/>
+        <Route path="/admin/blogs/1" element={<SingleBlogPage/>}/> {/* HARDCODED ID FOR NOW */}
 
         {/* without login pages  */}
         <Route path="/home" element={<LandingPage/>}/>
+        <Route path="/aboutus" element={<UserAboutUsPage/>}/>
       </Routes>
     </BrowserRouter>
   );
