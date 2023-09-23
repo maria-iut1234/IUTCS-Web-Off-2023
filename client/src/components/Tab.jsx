@@ -5,7 +5,7 @@ const Tab = ({ items }) => {
 
   return (
     <>
-      <div className="w-full  mx-auto border-b border-gray-100 font-bold">
+      <div className="w-full  mx-auto sm:border-b sm:border-gray-100 font-bold">
         <div className="mx-4 flex flex-col items-center ">
           <ul className="flex flex-wrap -mb-px">
             {items.map((item, index) => (
