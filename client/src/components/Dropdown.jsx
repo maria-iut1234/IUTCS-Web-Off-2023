@@ -6,7 +6,6 @@ const Dropdown = ({ onSelect, disabledOption, dropdownOptions }) => {
       );
       if (selectedOption) {
         onSelect(selectedOption); // Set the entire selected competition object
-        console.log(selectedOption);
       }
     };
     
