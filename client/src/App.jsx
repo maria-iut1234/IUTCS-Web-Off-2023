@@ -11,10 +11,11 @@ import AdminHomepage from "./pages/AdminHomepage";
 import LandingPage from "./pages/LandingPage";
 import AdminBlogs from "./pages/AdminBlogs";
 import SingleBlogPage from "./pages/SingleBlogPage";
-import UserAboutUsPage from "./pages/AboutUsPage";
 import ExecutivesInfoPage from "./pages/ExecutivesInfoPage";
 import EditBlogPage from "./pages/EditBlogPage";
 import AboutUsPage from "./pages/AboutUsPage";
+import AdminViewCompetition from "./pages/AdminViewCompetition";
+import CreateBlogPage from "./pages/CreateBlogPage";
 
 function App() {
   return (
@@ -24,18 +25,19 @@ function App() {
         <Route path="/admin/signin" element={<AdminSignIn />} />
         <Route path="/admin/home" element={<AdminHomepage/>}/>
         <Route path="/admin/blogs" element={<AdminBlogs/>}/>
-        <Route path="/admin/blogs" element={<AdminBlogs/>}/>
         <Route path="/admin/aboutus" element={<AboutUsPage/>}/>
+        <Route path="/admin/competitions" element={<AdminViewCompetition/>}/>
         <Route path="/admin/executives" element={<ExecutivesInfoPage/>}/>
-        <Route path="/admin/blogs/:id/edit" element={<EditBlogPage/>}/> {/* HARDCODED ID FOR NOW */}
-        <Route path="/admin/blogs/:id" element={<SingleBlogPage/>}/> {/* HARDCODED ID FOR NOW */}
+        <Route path="/admin/blogs/:id/edit" element={<EditBlogPage/>}/> 
+        <Route path="/admin/blogs/create" element={<CreateBlogPage/>}/> 
+        <Route path="/admin/blogs/:id" element={<SingleBlogPage/>}/> 
 
         {/* without login pages  */}
         <Route path="/aboutus" element={<AboutUsPage/>}/>
         <Route path="/home" element={<LandingPage/>}/>
         <Route path="/executives" element={<ExecutivesInfoPage/>}/>
         <Route path="/aboutus" element={<AboutUsPage/>}/>
-        <Route path="/blogs/:id" element={<SingleBlogPage/>}/> {/* HARDCODED ID FOR NOW */}
+        <Route path="/blogs/:id" element={<SingleBlogPage/>}/> 
       </Routes>
     </BrowserRouter>
   );
