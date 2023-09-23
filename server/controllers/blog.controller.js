@@ -4,16 +4,16 @@ import Blog from '../models/blog.model.js';
 // Create a Blog Post
 export const createBlog = async (req, res, next) => {
   try {
-    const { blog_id, title, description, about, author, date, tags } = req.body;
+    const { blog_id, title, description, author, date, tags, image } = req.body;
 
     const newBlog = new Blog({
       blog_id,
       title,
       description,
-      about,
       author,
       date,
       tags,
+      image,
     });
 
     const savedBlog = await newBlog.save();

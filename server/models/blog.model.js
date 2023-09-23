@@ -8,13 +8,14 @@ const blogSchema = new mongoose.Schema({
   
   description: { type: String, required: true },
 
-  about: { type: String},
-
   author: { type: String, required: true, },
 
   date: { type: Date, default: Date.now, },
 
   tags: [ { type: String, }, ],
+
+  image: { type: String,  }, 
+
   
 });
 

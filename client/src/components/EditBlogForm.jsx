@@ -1,9 +1,13 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import MDEditor from "@uiw/react-md-editor";
+import axios from "axios";
+import newRequest from "../utils/newRequest.unti";
+import configHeader from "../utils/configHeader.util";
+import upload from "../utils/upload.util";
 
 const EditBlogForm = ({ id }) => {
-  const [input, setInput] = useState("");
+  const [blogDescription, setBlogDescription] = useState("");
   const [blogTitle, setBlogTitle] = useState("");
   const [blogTag, setBlogTag] = useState("");
   const [blogImage, setBlogImage] = useState(null);
@@ -21,20 +25,45 @@ const EditBlogForm = ({ id }) => {
     setBlogImage(e.target.files[0]);
   };
 
-  const handleSubmit = (e) => {
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    if (id) { //not applicable for create blog page
-      console.log(id);
+
+    try 
+    {  
+
+      // Upload the image and get its URL
+      const imageUrl = await upload(blogImage);
+      console.log("URL", imageUrl);
+
+      const formData = {
+        blog_id : "1",
+        title: blogTitle,
+        description: blogDescription,
+        author: "Admin",
+        tags: [ blogTag ],
+        image: imageUrl,
+      };
+
+      console.log("Saved Blog Data:", formData);
+
+      const response = await newRequest.post("blog/createBlog", formData, configHeader);
+
+      console.log("Saved Blog Data:", response.data);
+
+      window.alert("Blog saved successfully!");
+    } 
+    
+    catch (error) {
+      console.error(error.response.data);
     }
-    console.log(blogTitle);
-    console.log(blogTag);
-    console.log(blogImage);
-    console.log(input);
+
   };
+  
   return (
     <>
       <div className="mx-7">
-        <form className="space-y-4" onSubmit={handleSubmit}>
+        <form className="space-y-4" onSubmit={handleSubmit} >
           <div
             className="px-4 m-2 rounded-sm"
             style={{ backdropFilter: "blur(100px)" }}
@@ -130,8 +159,8 @@ const EditBlogForm = ({ id }) => {
               Blog Content
             </label>
             <MDEditor
-              value={input}
-              onChange={setInput}
+              value={blogDescription}
+              onChange={setBlogDescription}
               className=" min-h-screen"
               style={{
                 ".wMdEditorTextPre, .wMdEditorTextInput, .wMdEditorText>.wMdEditorTextPre":
