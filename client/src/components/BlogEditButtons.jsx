@@ -32,7 +32,7 @@ const BlogEditButtons = ({ blogData }) => {
           <div>
             <div className="z-10 p-2" 
               onClick={() => {
-                navigate("/admin/blogs/1/edit");
+                navigate(`/admin/blogs/${blogData.blogId}/edit`);
               }}>
               <button
                 type="submit"
