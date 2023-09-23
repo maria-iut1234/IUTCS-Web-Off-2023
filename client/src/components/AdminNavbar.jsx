@@ -4,9 +4,10 @@ import logo from "../assets/IUTCS_logo_transparent_light.png";
 
 const AdminNavbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [cancelMouseLeave, setCancelMouseLeave] = useState(false); // Step 1
 
   const linkClass =
-    "py-4 md:mx-8 md:py-0 relative text-xl w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-[#02E1DC] after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-500 after:origin-center hover:text-[#02E1DC]";
+    "py-4 md:mx-8 md:py-0 relative text-lg w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-[#02E1DC] after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-500 after:origin-center hover:text-[#02E1DC]";
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -14,7 +15,7 @@ const AdminNavbar = () => {
 
   return (
     <div
-      className="shadow-md border-gray-100 drop-shadow-xl"
+      className="shadow-md border-gray-100 drop-shadow-xl z-10"
       style={{ boxShadow: "0px 0px 20px rgba(2, 225, 220, 0.5)" }}
     >
       <div className="max-w-xs mx-auto px-4 sm:px-6">
@@ -48,6 +49,12 @@ const AdminNavbar = () => {
             </li>
 
             <li>
+              <Link to="/admin/competitions" className={`${linkClass}`}>
+                Competitions
+              </Link>
+            </li>
+
+            <li>
               <Link to="/admin/executives" className={`${linkClass}`}>
                 Executives
               </Link>
@@ -58,14 +65,14 @@ const AdminNavbar = () => {
                 About Us
               </Link>
             </li>
+
+            
           </ul>
         </div>
         <div className="md:hidden">
           <button
             type="button"
             className="pt-1 w-10 h-10 text-sm text-white hover:text-[#02E1DC]"
-            onClick={toggleMenu}
-            aria-expanded={isMenuOpen}
           >
             <span className="sr-only">Open main menu</span>
             <svg
