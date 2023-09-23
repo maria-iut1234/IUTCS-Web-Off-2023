@@ -27,15 +27,15 @@ function App() {
         <Route path="/admin/blogs" element={<AdminBlogs/>}/>
         <Route path="/admin/aboutus" element={<AboutUsPage/>}/>
         <Route path="/admin/executives" element={<ExecutivesInfoPage/>}/>
-        <Route path="/admin/blogs/1/edit" element={<EditBlogPage/>}/> {/* HARDCODED ID FOR NOW */}
-        <Route path="/admin/blogs/1" element={<SingleBlogPage/>}/> {/* HARDCODED ID FOR NOW */}
+        <Route path="/admin/blogs/:id/edit" element={<EditBlogPage/>}/> {/* HARDCODED ID FOR NOW */}
+        <Route path="/admin/blogs/:id" element={<SingleBlogPage/>}/> {/* HARDCODED ID FOR NOW */}
 
         {/* without login pages  */}
         <Route path="/aboutus" element={<AboutUsPage/>}/>
         <Route path="/home" element={<LandingPage/>}/>
         <Route path="/executives" element={<ExecutivesInfoPage/>}/>
         <Route path="/aboutus" element={<AboutUsPage/>}/>
-        <Route path="/blogs/1" element={<SingleBlogPage/>}/> {/* HARDCODED ID FOR NOW */}
+        <Route path="/blogs/:id" element={<SingleBlogPage/>}/> {/* HARDCODED ID FOR NOW */}
       </Routes>
     </BrowserRouter>
   );
