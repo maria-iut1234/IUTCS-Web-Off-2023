@@ -1,16 +1,18 @@
 import React from "react";
 import Tab from "../components/Tab";
 import AdminNavbar from "../components/AdminNavbar";
+import ViewIntraUniversityCompetition from "../components/ViewIntraUniversityCompetition";
+import ViewInterUniversityCompetition from "../components/ViewInterUniversityCompetition";
 
 const AdminViewCompetition = () => {
   const tabItems = [
     {
       title: "Inter-University Competitions",
-      //   component: <ContributeForms />,
+        component: <ViewInterUniversityCompetition />,
     },
     {
       title: "Intra-University Competitions",
-      //   component: <ViewContribution />,
+        component: <ViewIntraUniversityCompetition />,
     },
   ];
   return (
@@ -20,7 +22,7 @@ const AdminViewCompetition = () => {
       >
         <AdminNavbar />
 
-        <Tab items={tabItems} />
+        <Tab items={tabItems} className="mt-2"/>
       </div>
     </>
   );
