@@ -1,9 +1,9 @@
 import React from 'react'
-import Image from '../assets/IUTCS_transparent.png'
+import Image from '../assets/IUTCS_logo_transparent_light.png'
 import { TypeAnimation } from 'react-type-animation'
 import { motion } from 'framer-motion'
 // import {fadeIn} from '../variants'
-3
+
 const AboutUsBanner = () => {
     return (
         <>

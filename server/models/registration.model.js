@@ -1,18 +1,20 @@
-import mongoose from 'mongoose';
+import mongoose from "mongoose";
 
-const registrationSchema = new mongoose.Schema({
-  
-  registration_id: { type: String, required: true},
+const registrationSchema = new mongoose.Schema(
+  {
+    registration_id: { type: String},
 
-  name: { type: String, required: true },
+    name: { type: String},
 
-  university: { type: String, required: true },
+    university: { type: String},
 
-  email: { type: String, required: true  },
+    email: { type: String},
 
-  phone: { type: Date,  },
+    phone: { type: Date },
+  },
+  {
+    strict: false,
+  }
+);
 
-});
-
-export default mongoose.model('Registration', registrationSchema);
-
+export default mongoose.model("Registration", registrationSchema);

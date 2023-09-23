@@ -12,6 +12,7 @@ const SingleBlogPage = () => {
       try {
         // Simulating data fetch from an API
         const fetchedBlogData = {
+          blogId: 1,
           blogImage:
             "https://images.unsplash.com/photo-1493770348161-369560ae357d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80",
           blogTag: "Nutrition",
@@ -25,6 +26,7 @@ const SingleBlogPage = () => {
         };
 
         setBlogData(fetchedBlogData);
+        // console.log(blogData);
       } catch (error) {
         console.error("Error fetching blog content:", error);
       }
@@ -80,7 +82,7 @@ const SingleBlogPage = () => {
             </div>
           </div>
 
-          {admin && (<BlogEditButtons blogContent={blogData}/>)}
+          {admin && (<BlogEditButtons blogData={blogData}/>)}
           
           <div className="px-4 mt-4 text-white mx-auto text-lg leading-relaxed pb-6">
             {blogData && blogData.blogContent}

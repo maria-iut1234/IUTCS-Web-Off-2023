@@ -5,7 +5,7 @@ const Tab = ({ items }) => {
 
   return (
     <>
-      <div className="w-full  mx-auto border-b border-gray-200 ">
+      <div className="w-full  mx-auto border-b border-gray-100 font-bold">
         <div className="mx-4 flex flex-col items-center ">
           <ul className="flex flex-wrap -mb-px">
             {items.map((item, index) => (
@@ -13,9 +13,9 @@ const Tab = ({ items }) => {
                 <button
                   className={`inline-block border-b-2 ${
                     activeTab === index
-                      ? "border-[#FFC6CD] text-[#FA9BAF]"
-                      : " border-transparent text-[#333]"
-                  } hover:border-[#FFC6CD] rounded-t-lg py-4 px-8 text-lg uppercase text-center `}
+                      ? "border-[#02e1dc] text-[#02e1dc]"
+                      : " border-transparent text-white"
+                  } hover:border-[#02e1dc] rounded-t-lg py-4 px-8 text-xl text-center `}
                   onClick={() => setActiveTab(index)}
                   role="tab"
                   aria-controls={`tab-${index}`}
