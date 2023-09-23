@@ -5,6 +5,7 @@ import { useNavigate } from "react-router";
 import PopUp from "./PopUp";
 
 const BlogEditButtons = ({ blogData }) => {
+  console.log(blogData)
   const [visibleModal, setVisibleModal] = useState(false);
   const openModal = () => {
     setVisibleModal(true);
