@@ -3,6 +3,7 @@ import BlogCard from "./BlogCard";
 import FeaturedBlog from "./FeaturedBlog";
 
 const BlogFeed = () => {
+  const admin = true;
   return (
     <>
       <div className="max-w-screen-xl mx-auto">
@@ -33,8 +34,11 @@ const BlogFeed = () => {
                 description={
                   " Duis euismod est quis lacus elementum, eu laoreet dolor consectetur. Pellentesque sed neque vel tellus lacinia elementum. Proin consequat ullamcorper eleifend."
                 }
-                author={"eduard franz"}
+                authorName={"eduard franz"}
+                authorImage ={"https://randomuser.me/api/portraits/men/86.jpg"}
                 dateOfCreation={"14 Aug 2023"}
+                blogId={"1"}
+                admin={admin}
               />
             </div>
           </div>

@@ -1,9 +1,10 @@
 import React from "react";
 
-const BlogCard = ({ imageURL, header, description, author, dateOfCreation }) => {
+const BlogCard = ({admin, blogId, imageURL, header, description, authorName, authorImage, dateOfCreation }) => {
+  const blogLink = admin? `/admin/blogs/${blogId}` : `/blogs/${blogId}`
   return (
     <>
-      <a className="block rounded w-full lg:flex mb-10" href="#">
+      <a className="block rounded w-full lg:flex mb-10" href={blogLink}>
         <div
           className="h-48 lg:w-48 flex-none bg-cover text-center overflow-hidden opacity-75"
           style={{
@@ -20,12 +21,12 @@ const BlogCard = ({ imageURL, header, description, author, dateOfCreation }) => 
           </div>
           <div className="flex my-3">
             <img
-              src="https://randomuser.me/api/portraits/men/86.jpg"
+              src={authorImage}
               className="h-10 w-10 rounded-full mr-2 object-cover"
             />
             <div>
               <p className="font-semibold text-gray-700 text-sm capitalize">
-                {author}
+                {authorName}
               </p>
               <p className="text-gray-600 text-xs">
                 {dateOfCreation}
