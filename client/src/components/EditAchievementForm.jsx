@@ -89,6 +89,8 @@ const EditAchievementForm = ({ id }) => {
         // Successful response
         window.alert("Achievement updated successfully!");
         // Optionally, you can reset form fields or navigate to another page here
+        navigate("/admin/achievements");
+
       } else {
         // Handle other response statuses as needed
         console.error("Error saving achievement. Status:", response.status);

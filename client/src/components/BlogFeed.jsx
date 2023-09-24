@@ -1,12 +1,28 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import BlogCard from "./BlogCard";
 import { MdPostAdd } from "react-icons/md";
 import { useNavigate } from "react-router";
 import PageHeader from "./PageHeader";
+import axios from "axios";
+import newRequest from "../utils/newRequest.unti";
 
 const BlogFeed = () => {
   const admin = true;
   const navigate = useNavigate();
+
+  const [blogs, setBlogs] = useState([]);
+
+  useEffect(() => {
+    
+    newRequest.get("blog/getAllBlogs").then((response) => {
+        setBlogs(response.data);
+      })
+      .catch((error) => {
+        console.error(error.response.data);
+      });
+  }, []);
+
+
   return (
     <>
       <div className="max-w-screen-xl mx-auto">
@@ -46,22 +62,23 @@ const BlogFeed = () => {
 
           <div className="block lg:flex lg:space-x-2 px-2 lg:p-0 mt-10 mb-10">
             <div className="w-full">
-              <BlogCard
-                imageURL={
-                  "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80"
-                }
-                header={
-                  "Aliquam venenatis nisl id purus rhoncus, in efficitur sem hendrerit."
-                }
-                description={
-                  " Duis euismod est quis lacus elementum, eu laoreet dolor consectetur. Pellentesque sed neque vel tellus lacinia elementum. Proin consequat ullamcorper eleifend."
-                }
-                authorName={"eduard franz"}
-                authorImage={"https://randomuser.me/api/portraits/men/86.jpg"}
-                dateOfCreation={"14 Aug 2023"}
-                blogId={"1"}
-                admin={admin}
-              />
+
+              {/* Map over the fetched blogs and render BlogCard components */}
+              {blogs.map((blog) => (   
+                <BlogCard
+                  key={blog.blog_id}
+                  blogId={blog.blog_id}
+                  imageURL={blog.image}
+                  title={blog.title}
+                  description={blog.description}
+                  author={blog.author}
+                  date={blog.date}
+                  tags={blog.tags}
+                  image={blog.image} 
+                  admin={admin}
+                />
+              ))}  
+
             </div>
           </div>
         </main>

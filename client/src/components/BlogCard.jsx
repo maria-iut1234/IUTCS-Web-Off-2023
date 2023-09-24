@@ -1,6 +1,6 @@
 import React from "react";
 
-const BlogCard = ({admin, blogId, imageURL, header, description, authorName, authorImage, dateOfCreation }) => {
+const BlogCard = ({admin, blogId, title, description, author, date, tags, image }) => {
   const blogLink = admin? `/admin/blogs/${blogId}` : `/blogs/${blogId}`
   return (
     <>
@@ -8,29 +8,35 @@ const BlogCard = ({admin, blogId, imageURL, header, description, authorName, aut
         <div
           className="h-48 lg:w-48 flex-none bg-cover text-center overflow-hidden opacity-75"
           style={{
-            backgroundImage: `url('${imageURL}')`,
+            backgroundImage: `url('${image}')`,
           }}
           title="deit is very important"
         ></div>
         <div className="bg-white rounded px-4 flex flex-col justify-between leading-normal">
           <div>
             <div className="mt-3 md:mt-0 text-gray-700 font-bold text-2xl mb-2">
-              {header}
+              {title}
             </div>
             <p className="text-gray-700 text-base">{description}</p>
           </div>
           <div className="flex my-3">
-            <img
-              src={authorImage}
-              className="h-10 w-10 rounded-full mr-2 object-cover"
-            />
             <div>
               <p className="font-semibold text-gray-700 text-sm capitalize">
-                {authorName}
+                {author}
               </p>
               <p className="text-gray-600 text-xs">
-                {dateOfCreation}
+                {new Date(date).toLocaleDateString()}
               </p>
+              <div className="flex flex-wrap mt-2">
+                {tags.map((tag, index) => (
+                  <span
+                    key={index}
+                    className="mr-2 mb-2 px-2 py-1 bg-gray-200 rounded text-xs"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
             </div>
           </div>
         </div>

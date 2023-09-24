@@ -52,6 +52,8 @@ const EditBlogForm = ({ id }) => {
       console.log("Saved Blog Data:", response.data);
 
       window.alert("Blog saved successfully!");
+      
+      navigate("/admin/blogs");
     } 
     
     catch (error) {
