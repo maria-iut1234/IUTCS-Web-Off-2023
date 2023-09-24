@@ -7,7 +7,7 @@ const AdminNavbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const linkClass =
-    "py-4 lg:mx-8 lg:py-0 relative text-lg w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-[#02E1DC] after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-500 after:origin-center hover:text-[#02E1DC]";
+    "py-4 lg:mx-5 lg:py-0 relative text-lg w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-[#02E1DC] after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-500 after:origin-center hover:text-[#02E1DC]";
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);

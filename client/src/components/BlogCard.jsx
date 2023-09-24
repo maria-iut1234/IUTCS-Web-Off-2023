@@ -25,7 +25,7 @@ const BlogCard = ({admin, blogId, title, description, author, date, tags, image,
         ></div>)}
         <div className="bg-white rounded px-4 flex flex-col justify-between leading-normal">
           <div>
-            <div className="mt-3 md:mt-0 text-gray-700 font-bold text-2xl mb-2">
+            <div className="mt-3 text-gray-700 font-bold text-2xl mb-2">
               {title}
             </div>
             <p className="text-gray-700 text-base">{description}</p>
