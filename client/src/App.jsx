@@ -31,7 +31,8 @@ function App() {
         <Route path="/admin/competitions" element={<AdminViewCompetition/>}/>
         <Route path="/admin/competitions/:id/team/edit" element={<EditTeamParticipantsPage/>}/>
         <Route path="/admin/competitions/:id/participant/edit" element={<EditIndividualParticipantsPage/>}/>
-        <Route path="/admin/executives" element={<ExecutivesInfoPage/>}/>
+        <Route path="/admin/executives" element={<ExecutivesInfoPage />} />
+        <Route path="/admin/achievements" element={<AchievementsPage/>}/>
         <Route path="/admin/blogs/:id/edit" element={<EditBlogPage/>}/> 
         <Route path="/admin/blogs/create" element={<CreateBlogPage/>}/> 
         <Route path="/admin/blogs/:id" element={<SingleBlogPage/>}/> 
@@ -39,7 +40,8 @@ function App() {
         {/* without login pages  */}
         <Route path="/aboutus" element={<AboutUsPage/>}/>
         <Route path="/home" element={<LandingPage/>}/>
-        <Route path="/executives" element={<ExecutivesInfoPage/>}/>
+        <Route path="/executives" element={<ExecutivesInfoPage />} />
+        <Route path="/achievements" element={<AchievementsPage/>}/>
         <Route path="/aboutus" element={<AboutUsPage/>}/>
         <Route path="/blogs/:id" element={<SingleBlogPage/>}/> 
       </Routes>

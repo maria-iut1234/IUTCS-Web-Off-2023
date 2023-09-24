@@ -1,8 +1,6 @@
 import React from 'react'
 import Image from '../assets/IUTCS_logo_transparent_light.png'
 import { TypeAnimation } from 'react-type-animation'
-import { motion } from 'framer-motion'
-// import {fadeIn} from '../variants'
 
 const AboutUsBanner = () => {
     return (
@@ -12,7 +10,7 @@ const AboutUsBanner = () => {
                     <div className='flex w-screen max-w-[150vh] flex-col items-center gap-y-8 lg:flex-row lg:items-center lg:gap-x-12'>
                         {/*text goes here*/}
                         <div className='flex-1 text-center text-white lg:text-left'>
-                            <h1 className='text-[55px] text-[#d84339] mt-6 font-bold leading-[1] min-h-[80px] lg: text-[48px]'>
+                            <h1 className='text-[55px] text-[#02e1dc] mt-6 font-bold leading-[1] min-h-[80px] lg: text-[48px]'>
                                 IUT <span >Computer Society</span>
                             </h1>
                             <div className='mb-6 text-[48px] lg:text-[36px] leading-[0.5]'>
@@ -30,12 +28,12 @@ const AboutUsBanner = () => {
                                     2000,
                                 ]}
                                     speed={70}
-                                    className='text-[#d84339]'
+                                    className='text-[#02e1dc]'
                                     wrapper='span'
                                     repeat={Infinity}
                                 />
                             </div>
-                            <h1 className='text-[28px] font-bold mb-4  lg: text-[28px] text-red-500'>
+                            <h1 className='text-[28px] font-bold mb-4  lg: text-[28px] text-[#02e1dc]'>
                                 A Little <span>About Us</span>
                             </h1>
                             <p className='text-[18px] lg:text-[18px]'>
