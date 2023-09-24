@@ -1,35 +1,33 @@
 import React, { useState } from "react";
 
-const Tab = ({ items }) => {
+const Tabs = ({ tabItems }) => {
   const [activeTab, setActiveTab] = useState(0);
+
+  const handleTabClick = (tabNumber) => {
+    setActiveTab(tabNumber);
+  };
 
   return (
     <>
-      <div className="w-full  mx-auto sm:border-b sm:border-gray-100 font-bold">
-        <div className="mx-4 flex flex-col items-center ">
-          <ul className="flex flex-wrap -mb-px">
-            {items.map((item, index) => (
-              <li key={index} className="mr-4" role="presentation">
-                <button
-                  className={`inline-block border-b-2 ${
-                    activeTab === index
-                      ? "border-[#02e1dc] text-[#02e1dc]"
-                      : " border-transparent text-white"
-                  } hover:border-[#02e1dc] rounded-t-lg py-4 px-8 text-xl text-center `}
-                  onClick={() => setActiveTab(index)}
-                  role="tab"
-                  aria-controls={`tab-${index}`}
-                  aria-selected={activeTab === index}
-                >
-                  {item.title}
-                </button>
-              </li>
-            ))}
-          </ul>
+      <div className="">
+        <div className="flex flex-col sm:flex-row">
+          {tabItems.map((item, index) => (
+            <button
+              key={index}
+              className={`py-4 px-6 block focus:outline-none ${
+                activeTab === index
+                  ? " border-b-2 border-[#02e1dc] text-[#02e1dc]"
+                  : "border-transparent text-white"
+              } hover:border-[#02e1dc] text-xl text-center`}
+              onClick={() => handleTabClick(index)}
+            >
+              {item.title}
+            </button>
+          ))}
         </div>
       </div>
       <div id="myTabContent">
-        {items.map(
+        {tabItems.map(
           (item, index) =>
             activeTab === index && (
               <div
@@ -42,9 +40,9 @@ const Tab = ({ items }) => {
               </div>
             )
         )}
-      </div>
+      </div>{" "}
     </>
   );
 };
 
-export default Tab;
+export default Tabs;
