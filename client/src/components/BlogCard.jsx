@@ -4,14 +4,14 @@ const BlogCard = ({admin, blogId, title, description, author, date, tags, image 
   const blogLink = admin? `/admin/blogs/${blogId}` : `/blogs/${blogId}`
   return (
     <>
-      <a className="block rounded w-full lg:flex mb-10" href={blogLink}>
-        <div
-          className="h-48 lg:w-48 flex-none bg-cover text-center overflow-hidden opacity-75"
+      <a className="block rounded w-full mb-10" href={blogLink}>
+        {image && (<div
+          className="h-48 flex-none bg-cover text-center overflow-hidden opacity-75"
           style={{
             backgroundImage: `url('${image}')`,
           }}
           title="deit is very important"
-        ></div>
+        ></div>)}
         <div className="bg-white rounded px-4 flex flex-col justify-between leading-normal">
           <div>
             <div className="mt-3 md:mt-0 text-gray-700 font-bold text-2xl mb-2">
