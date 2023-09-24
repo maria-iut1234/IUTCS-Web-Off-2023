@@ -55,6 +55,12 @@ const AdminNavbar = () => {
             </li>
 
             <li>
+              <Link to="/admin/achievements" className={`${linkClass}`}>
+                Achivements
+              </Link>
+            </li>
+
+            <li>
               <Link to="/admin/executives" className={`${linkClass}`}>
                 Executives
               </Link>
