@@ -27,31 +27,31 @@ const LandingPageNavbar = () => {
             }`}
           >
             <li>
-              <Link to="/admin/home" className={`${linkClass}`}>
+              <Link to="/home" className={`${linkClass}`}>
                 Home
               </Link>
             </li>
 
             <li>
-              <Link to="/admin/blogs" className={`${linkClass}`}>
+              <Link to="/blogs" className={`${linkClass}`}>
                 Blogs
               </Link>
             </li>
 
             <li>
-              <Link to="/admin/competitions" className={`${linkClass}`}>
+              <Link to="/competitions" className={`${linkClass}`}>
                 Competitions
               </Link>
             </li>
 
             <li>
-              <Link to="/admin/executives" className={`${linkClass}`}>
+              <Link to="/executives" className={`${linkClass}`}>
                 Executives
               </Link>
             </li>
 
             <li>
-              <Link to="/admin/aboutus" className={`${linkClass}`}>
+              <Link to="/aboutus" className={`${linkClass}`}>
                 About Us
               </Link>
             </li>
