@@ -22,6 +22,7 @@ import AchievementsPage from "./pages/AchievementsPage";
 import CreateAchievementPage from "./pages/CreateAchievementPage";
 import EditAchievementPage from "./pages/EditAchievementPage";
 import EditCompetitionsPage from "./pages/EditCompetitionsPage";
+import AddAdminPage from "./pages/AddAdminPage";
 
 function App() {
   return (
@@ -44,6 +45,7 @@ function App() {
         <Route path="/admin/blogs/:id/edit" element={<EditBlogPage/>}/> 
         <Route path="/admin/blogs/create" element={<CreateBlogPage/>}/> 
         <Route path="/admin/blogs/:id" element={<SingleBlogPage/>}/> 
+        <Route path="/admin/add" element={<AddAdminPage/>}/> 
 
         {/* without login pages  */}
         <Route path="/aboutus" element={<AboutUsPage/>}/>
