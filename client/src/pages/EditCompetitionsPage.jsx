@@ -101,6 +101,12 @@ const EditCompetitionsPage = () => {
                 </div>
               </div>
             </div>
+
+            <div className="text-center">
+              <h1 className="mb-2 text-5xl font-semibold text-white text-shadow-custom font-moderna-custom">
+                Edit Competition Details
+              </h1>
+            </div>
             <div className="flex flex-col space-y-1 mb-6">
               <label
                 htmlFor="name"

@@ -119,7 +119,7 @@ const EditAchievementForm = ({ id }) => {
   
   return (
     <>
-      <div className="mx-7">
+      <div className="mx-3 sm:mx-10 md:mx-40 lg:mx-80">
         <form className="space-y-4" onSubmit={handleSubmit} >
           <div
             className="px-4 m-2 rounded-sm"
