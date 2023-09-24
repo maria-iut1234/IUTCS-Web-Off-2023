@@ -10,6 +10,7 @@ export function AchievementsCarousel() {
     useEffect(() => {
         async function fetchAchievements() {
             try {
+                //maybe i should get latest 5 achievements at a time
                 const response = await newRequest.get('achievement/getAllAchievements', configHeader);
                 setAchievements(response.data);
             } catch (error) {
