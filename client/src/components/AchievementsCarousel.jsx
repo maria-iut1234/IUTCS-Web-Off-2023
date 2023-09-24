@@ -1,4 +1,4 @@
-import { Carousel, Typography, Button } from "@material-tailwind/react";
+import { Carousel, Typography} from "@material-tailwind/react";
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 
@@ -14,7 +14,7 @@ export function AchievementsCarousel() {
             });
     }, []);
     return (
-        <div className="container flex justify-center items-center w-screen h-screen m-6">
+        <div className="flex justify-center items-center h-screen m-6">
             <Carousel className="rounded-xl">
                 {achievements.map((achievement, index) => (
                     <div className="relative h-full w-full" key={index}>

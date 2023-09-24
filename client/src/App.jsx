@@ -18,6 +18,7 @@ import AdminViewCompetition from "./pages/AdminViewCompetition";
 import CreateBlogPage from "./pages/CreateBlogPage";
 import { EditTeamParticipantsPage } from "./pages/EditTeamParticipantsPage";
 import EditIndividualParticipantsPage from "./pages/EditIndividualParticipantsPage";
+import AchievementsPage from "./pages/AchievementsPage";
 
 function App() {
   return (
