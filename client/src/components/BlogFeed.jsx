@@ -28,8 +28,8 @@ const BlogFeed = () => {
 
   return (
     <>
-      <div className="max-w-screen-xl mx-auto">
-        <main className="mt-10">
+      <div className="max-w-full mx-auto">
+        <main className="mt-2">
           <PageHeader
             imageUrl={
               "https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
@@ -63,7 +63,7 @@ const BlogFeed = () => {
             </div>
           </div>
 
-          <div className="block lg:flex lg:space-x-2 px-2 lg:p-0 mt-10 mb-10">
+          <div className="block lg:flex lg:space-x-2 px-2 lg:p-0 mb-10">
             <div className="w-full">
 
               {/* Map over the fetched blogs and render BlogCard components */}
