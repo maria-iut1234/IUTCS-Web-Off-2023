@@ -19,6 +19,8 @@ import CreateBlogPage from "./pages/CreateBlogPage";
 import { EditTeamParticipantsPage } from "./pages/EditTeamParticipantsPage";
 import EditIndividualParticipantsPage from "./pages/EditIndividualParticipantsPage";
 import AchievementsPage from "./pages/AchievementsPage";
+import CreateAchievementPage from "./pages/CreateAchievementPage";
+import EditAchievementPage from "./pages/EditAchievementPage";
 
 function App() {
   return (
@@ -33,7 +35,9 @@ function App() {
         <Route path="/admin/competitions/:id/team/edit" element={<EditTeamParticipantsPage/>}/>
         <Route path="/admin/competitions/:id/participant/edit" element={<EditIndividualParticipantsPage/>}/>
         <Route path="/admin/executives" element={<ExecutivesInfoPage />} />
-        <Route path="/admin/achievements" element={<AchievementsPage/>}/>
+        <Route path="/admin/achievements" element={<AchievementsPage />} />
+        <Route path="/admin/achievements/:id/edit" element={<EditAchievementPage/>}/> 
+        <Route path="/admin/achievements/create" element={<CreateAchievementPage/>}/> 
         <Route path="/admin/blogs/:id/edit" element={<EditBlogPage/>}/> 
         <Route path="/admin/blogs/create" element={<CreateBlogPage/>}/> 
         <Route path="/admin/blogs/:id" element={<SingleBlogPage/>}/> 
