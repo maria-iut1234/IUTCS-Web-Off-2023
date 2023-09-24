@@ -54,6 +54,7 @@ function App() {
         <Route path="/achievements" element={<AchievementsPage/>}/>
         <Route path="/aboutus" element={<AboutUsPage/>}/>
         <Route path="/blogs/:id" element={<SingleBlogPage/>}/> 
+        <Route path="/blogs" element={<AdminBlogs/>}/> 
       </Routes>
     </BrowserRouter>
   );
