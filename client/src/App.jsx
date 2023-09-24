@@ -14,13 +14,14 @@ import SingleBlogPage from "./pages/SingleBlogPage";
 import ExecutivesInfoPage from "./pages/ExecutivesInfoPage";
 import EditBlogPage from "./pages/EditBlogPage";
 import AboutUsPage from "./pages/AboutUsPage";
-import AdminViewCompetition from "./pages/AdminViewCompetition";
+import AdminViewCompetitionPage from "./pages/AdminViewCompetitionPage";
 import CreateBlogPage from "./pages/CreateBlogPage";
 import { EditTeamParticipantsPage } from "./pages/EditTeamParticipantsPage";
 import EditIndividualParticipantsPage from "./pages/EditIndividualParticipantsPage";
 import AchievementsPage from "./pages/AchievementsPage";
 import CreateAchievementPage from "./pages/CreateAchievementPage";
 import EditAchievementPage from "./pages/EditAchievementPage";
+import EditCompetitionsPage from "./pages/EditCompetitionsPage";
 
 function App() {
   return (
@@ -31,7 +32,9 @@ function App() {
         <Route path="/admin/home" element={<AdminHomepage/>}/>
         <Route path="/admin/blogs" element={<AdminBlogs/>}/>
         <Route path="/admin/aboutus" element={<AboutUsPage/>}/>
-        <Route path="/admin/competitions" element={<AdminViewCompetition/>}/>
+        <Route path="/admin/competitions/create" element={<EditCompetitionsPage/>}/>
+        <Route path="/admin/competitions/:id/edit" element={<EditCompetitionsPage/>}/>
+        <Route path="/admin/competitions" element={<AdminViewCompetitionPage/>}/>
         <Route path="/admin/competitions/:id/team/edit" element={<EditTeamParticipantsPage/>}/>
         <Route path="/admin/competitions/:id/participant/edit" element={<EditIndividualParticipantsPage/>}/>
         <Route path="/admin/executives" element={<ExecutivesInfoPage />} />
