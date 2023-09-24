@@ -62,7 +62,7 @@ const EditBlogForm = ({ id }) => {
   
   return (
     <>
-      <div className="mx-7">
+      <div className="mx-3 sm:mx-10 md:mx-40 lg:mx-80">
         <form className="space-y-4" onSubmit={handleSubmit} >
           <div
             className="px-4 m-2 rounded-sm"
@@ -98,6 +98,13 @@ const EditBlogForm = ({ id }) => {
               </div>
             </div>
           </div>
+
+          <div className="text-center">
+              <h1 className="mb-2 text-5xl font-semibold text-white text-shadow-custom font-moderna-custom">
+              {id ? "Edit Blog" : "Create A New Blog"}
+              </h1>
+            </div>
+
           <div className="flex flex-col space-y-1 mb-6">
             <label
               htmlFor="title"

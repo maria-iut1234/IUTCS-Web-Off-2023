@@ -38,7 +38,7 @@ function AdminSignIn() {
               Admin Portal
             </h1>
           </div>
-          <div className="mx-7 mt-7">
+          <div className="mx-3 sm:mx-10 md:mx-40 lg:mx-80 mt-7">
             <form className="space-y-4" onSubmit={handleSubmit}>
               <div className="flex flex-col space-y-1 mb-6">
                 <label
