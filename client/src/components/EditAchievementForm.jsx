@@ -89,7 +89,7 @@ const EditAchievementForm = ({ id }) => {
                     type="submit"
                     className="lg:px-12 md:px-6 px-6 relative -top-1 -left-1 bg-[#F4F2F0] py-1 px-5 font-medium text-md md:text-lg text-[#373234] transition-all before:absolute before:top-1 before:left-1 before:-z-[1] before:h-full before:w-full before:border-2 before:border-[#02E1DC] border-[#02E1DC] before:transition-all before:content-[''] hover:top-0 hover:left-0 before:hover:top-0 before:hover:left-0 flex items-center"
                   >
-                    Save
+                    {id ? "Save" : "Add"}
                   </button>
                 </div>
               </div>

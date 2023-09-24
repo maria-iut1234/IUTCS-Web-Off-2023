@@ -11,6 +11,9 @@ const BlogEditButtons = ({ blogData }) => {
     setVisibleModal(true);
   };
   const navigate = useNavigate();
+  const handleDelete = (id)=>{
+    console.log(id); //send id to backend for deletion
+  }
   return (
     <>
       {visibleModal && (
@@ -19,7 +22,7 @@ const BlogEditButtons = ({ blogData }) => {
             "Are you sure you want to delete the post? You cannot undo this action!"
           }
           redButtonText={"Delete"}
-          redButtonFunction={() => {}}
+          redButtonFunction={() => {handleDelete(blogData.blogId)}}
           normalButtonText={"Cancel"}
           normalButtonFunction={() => setVisibleModal(false)}
           setModalVisibility={setVisibleModal}

@@ -11,15 +11,18 @@ const AchievementEditButtons = ({ achievementData }) => {
     setVisibleModal(true);
   };
   const navigate = useNavigate();
+  const handleDelete = (id)=>{
+    console.log(id); //send id to backend for deletion
+  }
   return (
     <>
       {visibleModal && (
         <PopUp
           message={
-            "Are you sure you want to delete the post? You cannot undo this action!"
+            "Are you sure you want to delete the achivement? You cannot undo this action!"
           }
           redButtonText={"Delete"}
-          redButtonFunction={() => {}}
+          redButtonFunction={() => {handleDelete(achievementData._id)}}
           normalButtonText={"Cancel"}
           normalButtonFunction={() => setVisibleModal(false)}
           setModalVisibility={setVisibleModal}
