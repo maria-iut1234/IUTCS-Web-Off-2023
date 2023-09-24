@@ -31,7 +31,6 @@ const AddAdminPage = () => {
       >
         <div className="mx-3 sm:mx-10 md:mx-40 lg:mx-80">
           <form className="space-y-4" onSubmit={handleSubmit}>
-            
             <div
               className="px-4 m-2 rounded-sm"
               style={{ backdropFilter: "blur(100px)" }}
@@ -68,7 +67,7 @@ const AddAdminPage = () => {
 
             <div className="text-center">
               <h1 className="mb-2 text-5xl font-semibold text-white text-shadow-custom font-moderna-custom">
-                Add An Admin 
+                Add An Admin
               </h1>
             </div>
 
@@ -140,7 +139,6 @@ const AddAdminPage = () => {
                 name="image"
                 onChange={handleChange}
                 className="bg-white text-black py-2 px-4 border-2 border-[#02E1DC] focus:outline-none focus:border-[#02E1DC]"
-                required
               />
             </div>
           </form>
