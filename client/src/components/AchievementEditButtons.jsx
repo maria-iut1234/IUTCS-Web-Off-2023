@@ -3,6 +3,8 @@ import { BiSolidEdit } from "react-icons/bi";
 import { MdOutlineDelete } from "react-icons/md";
 import { useNavigate } from "react-router";
 import PopUp from "./PopUp";
+import newRequest from "../utils/newRequest.unti";
+import configHeader from "../utils/configHeader.util";
 
 const AchievementEditButtons = ({ achievementData }) => {
   console.log(achievementData)
@@ -11,18 +13,32 @@ const AchievementEditButtons = ({ achievementData }) => {
     setVisibleModal(true);
   };
   const navigate = useNavigate();
-  const handleDelete = (id)=>{
-    console.log(id); //send id to backend for deletion
-  }
+  const handleDelete = async () => {
+  
+    try {
+        const response = await newRequest.delete(`achievement/deleteAchievement/${achievementData._id}`, configHeader);
+      if (response.status === 200) {
+        // Successful response
+        window.location.reload();
+      } else {
+        // Handle other response statuses as needed
+        console.error("Error deleting achievement. Status:", response.status);
+      }
+    } catch (error) {
+      console.error("Error deleting achievement. Status:", error);
+      // Handle the error and display a user-friendly error message
+      window.alert("Error deleting achievement. Please try again later.");
+    }
+  };
   return (
     <>
       {visibleModal && (
         <PopUp
           message={
-            "Are you sure you want to delete the achivement? You cannot undo this action!"
+            "Are you sure you want to delete the post? You cannot undo this action!"
           }
           redButtonText={"Delete"}
-          redButtonFunction={() => {handleDelete(achievementData._id)}}
+          redButtonFunction={handleDelete}
           normalButtonText={"Cancel"}
           normalButtonFunction={() => setVisibleModal(false)}
           setModalVisibility={setVisibleModal}

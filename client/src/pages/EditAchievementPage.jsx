@@ -4,7 +4,6 @@ import EditAchievementForm from "../components/EditAchievementForm";
 
 const EditAchievementPage = () => {
   const { id } = useParams();
-
   return (
     <>
       <div
