@@ -16,20 +16,12 @@ const Table = ({ data, selectedCompetition }) => {
   const [visibleModal, setVisibleModal] = useState(false);
   const navigate = useNavigate();
 
+  const handleDelete = (id)=>{
+    console.log(id); //send id to backend for deletion
+  }
+
   return (
     <>
-      {visibleModal && (
-        <PopUp
-          message={
-            "Are you sure you want to delete this entry? You cannot undo this action!"
-          }
-          redButtonText={"Delete"}
-          redButtonFunction={() => {}}
-          normalButtonText={"Cancel"}
-          normalButtonFunction={() => setVisibleModal(false)}
-          setModalVisibility={setVisibleModal}
-        />
-      )}
       <div className="w-full mb-4 xl:mb-0 mx-auto rounded-sm">
         <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded-sm border border-[#1c0122]">
           <div className="rounded-t mb-0 px-4 py-3">
@@ -62,6 +54,11 @@ const Table = ({ data, selectedCompetition }) => {
                   <th className="px-6 bg-blueGray-50 align-middle border border-solid border-blueGray-100 py-3 uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
                     Date of Registration
                   </th>
+                  {selectedCompetition.competition_scale === "inter" && (
+                    <th className="px-6 bg-blueGray-50 align-middle border border-solid border-blueGray-100 py-3 uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
+                      University
+                    </th>
+                  )}
                   <th className="px-6 bg-blueGray-50 align-middle border border-solid border-blueGray-100 py-3 uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
                     Actions
                   </th>
@@ -70,51 +67,72 @@ const Table = ({ data, selectedCompetition }) => {
 
               <tbody className="text-md">
                 {data.map((row) => (
-                  <tr key={row._id}>
-                    {selectedCompetition.competition_type === "individual" && (
-                      <>
-                        <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 whitespace-nowrap p-4 text-left text-blueGray-700">
-                          {row.participant_name}
-                        </td>
-                      </>
+                  <>
+                    {visibleModal && (
+                    <PopUp
+                      message={
+                        "Are you sure you want to delete this entry? You cannot undo this action!"
+                      }
+                      redButtonText={"Delete"}
+                      redButtonFunction={() => {handleDelete(row._id)}}
+                      normalButtonText={"Cancel"}
+                      normalButtonFunction={() => setVisibleModal(false)}
+                      setModalVisibility={setVisibleModal}
+                    />
                     )}
-                    {selectedCompetition.competition_type === "team" && (
-                      <>
+                    <tr key={row._id}>
+                      {selectedCompetition.competition_type ===
+                        "individual" && (
+                        <>
+                          <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 whitespace-nowrap p-4 text-left text-blueGray-700">
+                            {row.participant_name}
+                          </td>
+                        </>
+                      )}
+                      {selectedCompetition.competition_type === "team" && (
+                        <>
+                          <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 whitespace-nowrap p-4 text-left text-blueGray-700">
+                            {row.team_name ? row.team_name : "---"}
+                          </td>
+                          <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 whitespace-nowrap p-4 text-left text-blueGray-700">
+                            {row.team_size ? row.team_size : "---"}
+                          </td>
+                        </>
+                      )}
+                      <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 whitespace-nowrap p-4 text-left text-blueGray-700">
+                        {row.date_of_registration}
+                      </td>
+
+                      {selectedCompetition.competition_scale === "inter" && (
                         <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 whitespace-nowrap p-4 text-left text-blueGray-700">
-                          {row.team_name ? row.team_name : "---"}
+                          {row.university_name}
                         </td>
-                        <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 whitespace-nowrap p-4 text-left text-blueGray-700">
-                          {row.team_size ? row.team_size : "---"}
-                        </td>
-                      </>
-                    )}
-                    <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 whitespace-nowrap p-4 text-left text-blueGray-700">
-                      {row.date_of_registration}
-                    </td>
-                    {/* actions row  */}
-                    <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 whitespace-nowrap p-4 text-left text-2xl">
-                      <button
-                        className="mr-4 text-blue-700"
-                        onClick={() =>
-                          selectedCompetition.competition_type === "team"
-                            ? navigate(
-                                `/admin/competitions/${row._id}/team/edit`
-                              )
-                            : navigate(
-                                `/admin/competitions/${row._id}/participant/edit`
-                              )
-                        }
-                      >
-                        <BiEdit />
-                      </button>
-                      <button
-                        className="text-red-700"
-                        onClick={() => setVisibleModal(true)}
-                      >
-                        <MdOutlineDelete />
-                      </button>
-                    </td>
-                  </tr>
+                      )}
+                      {/* actions row  */}
+                      <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 whitespace-nowrap p-4 text-left text-2xl">
+                        <button
+                          className="mr-4 text-blue-700"
+                          onClick={() =>
+                            selectedCompetition.competition_type === "team"
+                              ? navigate(
+                                  `/admin/competitions/${row._id}/team/edit`
+                                )
+                              : navigate(
+                                  `/admin/competitions/${row._id}/participant/edit`
+                                )
+                          }
+                        >
+                          <BiEdit />
+                        </button>
+                        <button
+                          className="text-red-700"
+                          onClick={() => setVisibleModal(true)}
+                        >
+                          <MdOutlineDelete />
+                        </button>
+                      </td>
+                    </tr>
+                  </>
                 ))}
               </tbody>
             </table>
