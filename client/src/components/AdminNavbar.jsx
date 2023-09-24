@@ -56,7 +56,7 @@ const AdminNavbar = () => {
 
             <li>
               <Link to="/admin/achievements" className={`${linkClass}`}>
-                Achivements
+                Achievements
               </Link>
             </li>
 
