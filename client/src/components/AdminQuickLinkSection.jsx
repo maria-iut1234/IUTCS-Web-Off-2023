@@ -1,20 +1,25 @@
 import React from "react";
 import { GrAchievement } from "react-icons/gr";
-import {RiAdminLine} from "react-icons/ri";
-import {HiOutlineDocumentAdd} from "react-icons/hi";
-import {BsPersonPlus} from "react-icons/bs";
+import { RiAdminLine } from "react-icons/ri";
+import { HiOutlineDocumentAdd } from "react-icons/hi";
+import { BsPersonPlus } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import { MdOutlineLeaderboard } from "react-icons/md";
 
 const AdminQuickLinkdiv = () => {
   return (
     <>
+      <div class="text-center pt-12">
+        <h1 class="font-bold text-xl md:text-2xl lg:text-3xl text-white">
+          Here Are Some Quick Links For You 
+        </h1>
+      </div>
       <div className="min-w-screen flex items-center justify-center">
-        <div className="max-w-7xl w-full mx-auto py-6 sm:px-6 ">
+        <div className="max-w-7xl w-full mx-auto py-6 sm:px-6 px-4">
           <div className="flex flex-col w-full space-y-4 mb-2 ">
             <DashboardWidget
               color="purple"
-              icon={<BsPersonPlus/>}
+              icon={<BsPersonPlus />}
               title="Sales"
               value="Add Executive"
               subtitle="Add A New Executive"
@@ -22,7 +27,7 @@ const AdminQuickLinkdiv = () => {
             />
             <DashboardWidget
               color="blue"
-              icon={<MdOutlineLeaderboard/>}
+              icon={<MdOutlineLeaderboard />}
               title="Customers"
               value="Competitions"
               link="/admin/competitions/create"
@@ -30,7 +35,7 @@ const AdminQuickLinkdiv = () => {
             />
             <DashboardWidget
               color="yellow"
-              icon={<HiOutlineDocumentAdd/>}
+              icon={<HiOutlineDocumentAdd />}
               title="Products"
               value="Create Blog"
               link="/admin/blogs/create"
@@ -38,7 +43,7 @@ const AdminQuickLinkdiv = () => {
             />
             <DashboardWidget
               color="red"
-              icon={<RiAdminLine/>}
+              icon={<RiAdminLine />}
               title="Orders"
               value="Add Admin"
               link="/admin/add"

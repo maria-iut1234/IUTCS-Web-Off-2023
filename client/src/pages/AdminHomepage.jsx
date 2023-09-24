@@ -18,7 +18,7 @@ const AdminHomepage = () => {
                 <div className="mb-6 text-[48px] leading-[0.5]">
                   <span className="mr-4 text-white">Welcome</span>
                   <TypeAnimation
-                    sequence={["Admin", 2000, "Lets Begin", 2000]}
+                    sequence={["Admin", 2000, "Back", 2000]}
                     speed={70}
                     className="text-[#02e1dc]"
                     wrapper="span"
@@ -27,7 +27,7 @@ const AdminHomepage = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </div>            
           <AdminQuickLinkSection />
         </div>
       </div>
