@@ -1,17 +1,28 @@
 import React from "react";
 
-const BlogCard = ({admin, blogId, title, description, author, date, tags, image }) => {
+const BlogCard = ({admin, blogId, title, description, author, date, tags, image, onClick }) => {
   const blogLink = admin? `/admin/blogs/${blogId}` : `/blogs/${blogId}`
+
+  const handleCardClick = () => {
+    onClick(blogId);                      // Passing the blogId to the callback
+  };
+
   return (
     <>
-      <a className="block rounded w-full mb-10" href={blogLink}>
-        {image && (<div
-          className="h-48 flex-none bg-cover text-center overflow-hidden opacity-75"
+
+      <div
+        className="block rounded w-full lg:flex mb-10 cursor-pointer"
+        onClick={handleCardClick} // Attach the click handler to the card
+      ></div>
+
+      <a className="block rounded w-full lg:flex mb-10" href={blogLink}>
+        <div
+          className="h-48 lg:w-48 flex-none bg-cover text-center overflow-hidden opacity-75"
           style={{
             backgroundImage: `url('${image}')`,
           }}
           title="deit is very important"
-        ></div>)}
+        ></div>
         <div className="bg-white rounded px-4 flex flex-col justify-between leading-normal">
           <div>
             <div className="mt-3 md:mt-0 text-gray-700 font-bold text-2xl mb-2">

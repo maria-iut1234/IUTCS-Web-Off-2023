@@ -22,6 +22,9 @@ const BlogFeed = () => {
       });
   }, []);
 
+    const handleCardClick = (blogId) => {
+      navigate(`/blogs/${blogId}`);             // Navigate to the single blog page with the selected blogId
+    };
 
   return (
     <>
@@ -76,6 +79,7 @@ const BlogFeed = () => {
                   tags={blog.tags}
                   image={blog.image} 
                   admin={admin}
+                  onClick={handleCardClick}
                 />
               ))}  
 

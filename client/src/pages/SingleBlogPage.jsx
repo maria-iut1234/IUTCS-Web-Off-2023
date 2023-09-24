@@ -1,39 +1,47 @@
 import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom"; 
 import AdminNavbar from "../components/AdminNavbar";
 import BlogEditButtons from "../components/BlogEditButtons";
+import axios from "axios";
+
+const newRequest = axios.create({
+  baseURL: "http://localhost:7000/iutcs/",
+  withCredentials: true,
+});
+
 
 const SingleBlogPage = () => {
   const [blogData, setBlogData] = useState(null);
   const admin = true; //CHECK FOR ADMIN
   const bgClass = admin? "admin-gradient-bg" : "user-gradient-bg"
 
+  const { id: blogId } = useParams();           // Getting the blogId from the route parameter
+
   useEffect(() => {
     const fetchBlogData = async () => {
       try {
+
+        console.log(blogId)
+
         // Simulating data fetch from an API
-        const fetchedBlogData = {
-          blogId: 1,
-          blogImage:
-            "https://images.unsplash.com/photo-1493770348161-369560ae357d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80",
-          blogTag: "Nutrition",
-          blogTitle:
-            "Pellentesque a consectetur velit, ac molestie ipsum. Donec sodales, massa et auctor.",
-          authorName: "Mike Sullivan",
-          authorImage: "https://randomuser.me/api/portraits/men/97.jpg",
-          creationDate: "14 Aug",
-          blogContent:
-            "Advantage old had otherwise sincerity dependent additions. It in adapted natural hastily is justice. Six draw you him full not mean evil. Prepare garrets it expense windows shewing do an. She projection advantages resolution son indulgence. Part sure on no long life am at ever. In songs above he as drawn to. Gay was outlived peculiar rendered led six.",
-        };
+        const response = await newRequest.get(`blog/getBlogById/${blogId}`);
+        
+        if (response.status !== 200) {
+          throw new Error("Blog not found");
+        }
+        
+        const fetchedBlogData = response.data;
 
         setBlogData(fetchedBlogData);
-        // console.log(blogData);
-      } catch (error) {
-        console.error("Error fetching blog content:", error);
+      } 
+      
+      catch (error) {
+        console.error("Error fetching blog content:", error.response.data);
       }
     };
 
     fetchBlogData();
-  }, []);
+  }, [blogId]);
 
   return (
     <div className={`flex flex-col min-h-screen ${bgClass} bg-cover bg-fixed bg-center`}>
@@ -52,7 +60,7 @@ const SingleBlogPage = () => {
               }}
             ></div>
             <img
-              src={blogData && blogData.blogImage}
+              src={blogData && blogData.image}
               className="absolute left-0 top-0 w-full h-full z-0 object-cover"
             />
             <div className="p-4 absolute bottom-0 left-0 z-20">
@@ -60,22 +68,18 @@ const SingleBlogPage = () => {
                 href="#"
                 className="px-4 py-1 bg-black text-white inline-flex items-center justify-center mb-2"
               >
-                {blogData && blogData.blogTag}
+                {blogData && blogData.tags && blogData.tags[0]}
               </a>
               <h2 className="text-xl md:text-4xl font-semibold text-white leading-tight">
-                {blogData && blogData.blogTitle}
+                {blogData && blogData.title}
               </h2>
               <div className="flex mt-3">
-                <img
-                  src={blogData && blogData.authorImage}
-                  className="h-10 w-10 rounded-full mr-2 object-cover"
-                />
                 <div>
                   <p className="font-semibold text-white text-sm">
-                    {blogData && blogData.authorName}
+                    {blogData && blogData.author}
                   </p>
                   <p className="font-semibold text-white text-xs">
-                    {blogData && blogData.creationDate}
+                    {blogData && new Date(blogData.date).toLocaleDateString()}
                   </p>
                 </div>
               </div>
@@ -85,7 +89,7 @@ const SingleBlogPage = () => {
           {admin && (<BlogEditButtons blogData={blogData}/>)}
           
           <div className="px-4 mt-4 text-white mx-auto text-lg leading-relaxed pb-6">
-            {blogData && blogData.blogContent}
+            {blogData && blogData.description}
           </div>
         </main>
       </div>
