@@ -47,8 +47,8 @@ const MaskingText = () => {
 
   return (
     <>
-      <div className="flex w-full space-x-8 mx-auto">
-        <div className="w-1/2 flex justify-center items-center space-x-8">
+      <div className="md:flex w-full space-x-8 mx-auto">
+        <div className="w-full md:w-1/2 flex justify-center items-center space-x-8">
           <LottiePlayer
             loop={true}
             animationData={landing_page}
@@ -62,14 +62,14 @@ const MaskingText = () => {
             <h1
               onMouseEnter={textEnter}
               onMouseLeave={textLeave}
-              className="font-digital7-custom px-20 py-10 text-white text-9xl transition-colors duration-300 hover:text-[#FCCD0D]"
+              className="font-digital7-custom px-10 md:px-20 py-10 text-white text-9xl transition-colors duration-300 hover:text-[#FCCD0D]"
             >
               {`I U T C S`}
             </h1>
             <div
               onMouseEnter={textEnter}
               onMouseLeave={textLeave}
-              className="ml-24 mb-6 text-[48px] lg:text-[36px] leading-[0.5]"
+              className="max-w-screen md:ml-24 ml-10 mb-6 text-4xl lg:text-[36px] leading-[1] md:leading-[0.5]"
             >
               <span className="mr-4 text-white">Join us and</span>
               <TypeAnimation

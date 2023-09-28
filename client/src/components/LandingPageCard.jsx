@@ -2,7 +2,7 @@ import React from "react";
 
 function LandingPageCard({ coverImgUrl, hoverImgUrl, header }) {
   return (
-    <div className="w-1/3 pl-24 py-7 mx-auto">
+    <div className="md:p-1 mx-auto py-2">
       <div className="group overflow-hidden relative shadow-lg max-w-xs">
         <a href="#" className="absolute z-10 top-0 bottom-0 left-0 right-0"></a>
         <img

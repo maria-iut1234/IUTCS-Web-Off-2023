@@ -18,16 +18,15 @@ const LandingPageNavbar = () => {
       className="shadow-md border-gray-100 drop-shadow-xl z-10"
       style={{ boxShadow: "0px 0px 20px rgba(252, 205, 13, 0.5)" }}
     >
-      
+
       <nav className="flex justify-between bg-black text-white w-full">
         <div className="px-5 xl:px-12 py-4 flex w-full items-center">
           <ul
-            className={`lg:flex px-4 mx-auto font-semibold font-heading ${
-              isMenuOpen ? "block" : "hidden"
-            }`}
+            className={`lg:flex px-4 mx-auto font-semibold font-heading ${isMenuOpen ? "block" : "hidden"
+              }`}
           >
             <li>
-              <Link to="/home" className={`${linkClass}`}>
+              <Link to="/" className={`${linkClass}`}>
                 Home
               </Link>
             </li>
@@ -38,9 +37,15 @@ const LandingPageNavbar = () => {
               </Link>
             </li>
 
-            <li>
+            {/* <li>
               <Link to="/competitions" className={`${linkClass}`}>
                 Competitions
+              </Link>
+            </li> */}
+
+            <li>
+              <Link to="/achievements" className={`${linkClass}`}>
+                Achievements
               </Link>
             </li>
 
@@ -56,7 +61,7 @@ const LandingPageNavbar = () => {
               </Link>
             </li>
 
-            
+
           </ul>
         </div>
         <div className="lg:hidden">
