@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import MDEditor from "@uiw/react-md-editor";
 import axios from "axios";
-import newRequest from "../utils/newRequest.unti";
+import newRequest from "../utils/newRequest.util";
 import configHeader from "../utils/configHeader.util";
 import upload from "../utils/upload.util";
 

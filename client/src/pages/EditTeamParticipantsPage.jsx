@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import generateMemberInputs from "../components/MemberInputs";
 import MemberInputs from "../components/MemberInputs";
 
-export const EditTeamParticipantsPage = () => {
+const EditTeamParticipantsPage = () => {
   const { id } = useParams();
   const [participantData, setParticipantData] = useState({
     // Initialize with default values to avoid issues with controlled inputs
@@ -183,3 +182,5 @@ export const EditTeamParticipantsPage = () => {
     </>
   );
 };
+
+export default EditTeamParticipantsPage;

@@ -5,14 +5,13 @@ function ActivitiesSection() {
   return (
     <>
       <div
-        className={`flex-col bg-white bg-cover bg-fixed bg-center justify-center items-center`}
+        className={`py-4 flex-col bg-white bg-cover bg-fixed bg-center justify-center items-center`}
       >
-        <h1 className="font-poppins-custom text-black text-7xl transition-colors duration-300 hover:text-red-500">
+        <h1 className="font-poppins-custom text-black text-7xl transition-colors duration-300 hover:text-red-500 pt-4 m-2 text-center">
           Activites
         </h1>
-        <div
-          className={`flex flex-wrap bg-white bg-cover bg-fixed bg-center mx-auto justify-center items-center`}
-        >
+        <div class="holder mx-auto md:w-10/12 grid sm:grid-cols-2 md:grid-cols-3 py-2">
+
           <LandingPageCard
             className="px-7"
             coverImgUrl={

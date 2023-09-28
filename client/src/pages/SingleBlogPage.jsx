@@ -2,17 +2,12 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom"; 
 import AdminNavbar from "../components/AdminNavbar";
 import BlogEditButtons from "../components/BlogEditButtons";
-import axios from "axios";
-
-const newRequest = axios.create({
-  baseURL: "http://localhost:7000/iutcs/",
-  withCredentials: true,
-});
+import LandingPageNavbar from "../components/LandingPageNavbar";
+import newRequest from "../utils/newRequest.util"
 
 
-const SingleBlogPage = () => {
+const SingleBlogPage = ({admin}) => {
   const [blogData, setBlogData] = useState(null);
-  const admin = true; //CHECK FOR ADMIN
   const bgClass = admin? "admin-gradient-bg" : "user-gradient-bg"
 
   const { id: blogId } = useParams();           // Getting the blogId from the route parameter
@@ -45,7 +40,7 @@ const SingleBlogPage = () => {
 
   return (
     <div className={`flex flex-col min-h-screen ${bgClass} bg-cover bg-fixed bg-center`}>
-      <AdminNavbar />
+      {admin? <AdminNavbar /> : <LandingPageNavbar/>} 
       <div className="w-full mx-auto">
         <main className="mt-10">
           <div
@@ -59,10 +54,10 @@ const SingleBlogPage = () => {
                   "linear-gradient(180deg, transparent, rgba(0,0,0,.7))",
               }}
             ></div>
-            <img
+            {blogData?.image? (<img
               src={blogData && blogData.image}
               className="absolute left-0 top-0 w-full h-full z-0 object-cover"
-            />
+            />): <img src={"https://images.unsplash.com/photo-1563466151339-803912623d5e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80"} className="absolute left-0 top-0 w-full h-full z-0 object-cover bg-gray-700"/>}
             <div className="p-4 absolute bottom-0 left-0 z-20">
               <a
                 href="#"

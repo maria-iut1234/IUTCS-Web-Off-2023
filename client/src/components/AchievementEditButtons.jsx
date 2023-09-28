@@ -3,7 +3,7 @@ import { BiSolidEdit } from "react-icons/bi";
 import { MdOutlineDelete } from "react-icons/md";
 import { useNavigate } from "react-router";
 import PopUp from "./PopUp";
-import newRequest from "../utils/newRequest.unti";
+import newRequest from "../utils/newRequest.util";
 import configHeader from "../utils/configHeader.util";
 
 const AchievementEditButtons = ({ achievementData }) => {
@@ -46,7 +46,6 @@ const AchievementEditButtons = ({ achievementData }) => {
       )}
       <div
         className="m-2 rounded-sm"
-        style={{ backdropFilter: "blur(100px)" }}
       >
         <div className="max-w-screen-xl flex justify-start gap-4 md:gap-8 mx-auto py-1">
           <div>

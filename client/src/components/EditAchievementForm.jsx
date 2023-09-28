@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import MDEditor from "@uiw/react-md-editor";
-import newRequest from "../utils/newRequest.unti";
+import newRequest from "../utils/newRequest.util";
 import configHeader from "../utils/configHeader.util";
 import upload from "../utils/upload.util";
 
@@ -169,7 +169,7 @@ const EditAchievementForm = ({ id }) => {
               htmlFor="title"
               className="block text-md text-white font-moderna-custom"
             >
-              Achievement Title
+              Title
             </label>
             <input
               type="text"
@@ -187,7 +187,7 @@ const EditAchievementForm = ({ id }) => {
               htmlFor="awards"
               className="block text-md text-white font-moderna-custom"
             >
-              Achievement Type
+              Type
             </label>
             <input
               type="text"
@@ -205,7 +205,7 @@ const EditAchievementForm = ({ id }) => {
               htmlFor="competition"
               className="block text-md text-white font-moderna-custom"
             >
-              Achievement Competition
+              Competition
             </label>
             <input
               type="text"
@@ -223,7 +223,7 @@ const EditAchievementForm = ({ id }) => {
               htmlFor="team"
               className="block text-md text-white font-moderna-custom"
             >
-              Achievement Team or Individual
+              Team or Individual
             </label>
             <input
               type="text"
@@ -241,7 +241,7 @@ const EditAchievementForm = ({ id }) => {
               htmlFor="image"
               className="block text-md text-white font-moderna-custom"
             >
-              Achievement Image
+              Image
             </label>
             <input
               type="file"
@@ -259,7 +259,7 @@ const EditAchievementForm = ({ id }) => {
               htmlFor="achievementContent"
               className="block text-md text-white font-moderna-custom mb-2"
             >
-              Achievement Content
+              Description
             </label>
             <MDEditor
               value={achievementDescription}

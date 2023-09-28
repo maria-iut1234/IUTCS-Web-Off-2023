@@ -1,18 +1,15 @@
 import React from "react";
 
-const BlogCard = ({admin, blogId, title, description, author, date, tags, image, onClick }) => {
-  const blogLink = admin? `/admin/blogs/${blogId}` : `/blogs/${blogId}`
+const BlogCard = ({ admin, blogId, title, description, author, date, tags, image, onClick }) => {
+  const blogLink = admin ? `/admin/blogs/${blogId}` : `/blogs/${blogId}`
 
-  const handleCardClick = () => {
-    onClick(blogId);                      // Passing the blogId to the callback
-  };
+
 
   return (
     <>
 
       <div
         className="block rounded w-full mb-10 cursor-pointer"
-        onClick={handleCardClick} // Attach the click handler to the card
       ></div>
 
       <a className="block rounded w-full mb-10" href={blogLink}>

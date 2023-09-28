@@ -1,19 +1,18 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import EditBlogForm from "../components/EditBlogForm";
+import EditExecutiveForm from "../components/EditExecutiveForm";
 
-const EditBlogPage = () => {
+const EditExecutivePage = () => {
   const { id } = useParams();
-
   return (
     <>
       <div
         className={`flex flex-col min-h-screen admin-gradient-bg bg-cover bg-fixed bg-center`}
       >
-        <EditBlogForm id={id}/>
+        <EditExecutiveForm id={id}/>
       </div>
     </>
   );
 };
 
-export default EditBlogPage;
+export default EditExecutivePage;
