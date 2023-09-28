@@ -3,7 +3,7 @@ import { BiSolidEdit } from "react-icons/bi";
 import { MdOutlineDelete } from "react-icons/md";
 import { useNavigate } from "react-router";
 import PopUp from "./PopUp";
-import newRequest from "../utils/newRequest.unti";
+import newRequest from "../utils/newRequest.util";
 import configHeader from "../utils/configHeader.util";
 
 const AchievementEditButtons = ({ achievementData }) => {
