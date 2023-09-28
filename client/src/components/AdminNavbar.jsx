@@ -13,6 +13,10 @@ const AdminNavbar = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const handleLogout = () => {
+    
+  }
+
   return (
     <div
       className="shadow-md border-gray-100 drop-shadow-xl z-10"
@@ -73,7 +77,7 @@ const AdminNavbar = () => {
             </li>
 
             <li>
-              <Link to="/home" className={`text-[#02e1dc] ${linkClass}`}>
+              <Link onClick={handleLogout} className={`text-[#02e1dc] ${linkClass}`}>
                 <div>
                   <div className="z-10" onClick={() => {}}>
                     <button
