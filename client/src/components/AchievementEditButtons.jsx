@@ -46,7 +46,6 @@ const AchievementEditButtons = ({ achievementData }) => {
       )}
       <div
         className="m-2 rounded-sm"
-        style={{ backdropFilter: "blur(100px)" }}
       >
         <div className="max-w-screen-xl flex justify-start gap-4 md:gap-8 mx-auto py-1">
           <div>

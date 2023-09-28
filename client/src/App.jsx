@@ -26,7 +26,7 @@ import EditExecutivePage from "./pages/EditExecutivePage";
 
 function App() {
   //single point of checking for user type
-  const admin = false; 
+  const admin = true; 
   return (
     <BrowserRouter>
       <Routes>

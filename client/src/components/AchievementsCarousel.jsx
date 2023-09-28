@@ -1,11 +1,11 @@
 import { Carousel, Typography } from "@material-tailwind/react";
 import { useEffect, useState } from 'react';
-import newRequest from "../utils/newRequest.unti";
+import newRequest from "../utils/newRequest.util";
 import configHeader from "../utils/configHeader.util";
 import AchievementEditButtons from "./AchievementEditButtons";
 
 
-export function AchievementsCarousel() {
+export function AchievementsCarousel({admin}) {
     const [achievements, setAchievements] = useState([]);
     useEffect(() => {
         async function fetchAchievements() {
@@ -20,8 +20,7 @@ export function AchievementsCarousel() {
 
         fetchAchievements();
     }, []);
-    const admin = true; //CHECK FOR ADMIN
-    return (
+    return achievements.length>0 &&  (
         <div className="flex justify-center items-center h-screen m-12">
             <Carousel className="rounded-xl">
                 {achievements.map((achievement, index) => (
