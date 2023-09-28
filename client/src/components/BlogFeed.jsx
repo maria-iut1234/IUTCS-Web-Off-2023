@@ -3,11 +3,9 @@ import BlogCard from "./BlogCard";
 import { MdPostAdd } from "react-icons/md";
 import { useNavigate } from "react-router";
 import PageHeader from "./PageHeader";
-import axios from "axios";
-import newRequest from "../utils/newRequest.unti";
+import newRequest from "../utils/newRequest.util";
 
-const BlogFeed = () => {
-  const admin = true;
+const BlogFeed = ({admin}) => {
   const navigate = useNavigate();
 
   const [blogs, setBlogs] = useState([]);
@@ -22,9 +20,7 @@ const BlogFeed = () => {
       });
   }, []);
 
-    const handleCardClick = (blogId) => {
-      navigate(`/blogs/${blogId}`);             // Navigate to the single blog page with the selected blogId
-    };
+   
 
   return (
     <>
@@ -37,7 +33,7 @@ const BlogFeed = () => {
             pageTitle={"Blogs"}
           />
 
-          <div
+          {admin && (<div
             className="m-2 rounded-sm"
             style={{ backdropFilter: "blur(100px)" }}
           >
@@ -61,7 +57,7 @@ const BlogFeed = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </div>)}
 
           <div className="block  px-2 mb-10">
             <div className="w-full">
@@ -79,7 +75,6 @@ const BlogFeed = () => {
                   tags={blog.tags}
                   image={blog.image} 
                   admin={admin}
-                  onClick={handleCardClick}
                 />
               ))}  
 
