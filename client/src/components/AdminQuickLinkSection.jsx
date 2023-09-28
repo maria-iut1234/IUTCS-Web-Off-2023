@@ -9,8 +9,8 @@ import { MdOutlineLeaderboard } from "react-icons/md";
 const AdminQuickLinkdiv = () => {
   return (
     <>
-      <div class="text-center pt-12">
-        <h1 class="font-bold text-xl md:text-2xl lg:text-3xl text-white">
+      <div className="text-center pt-12">
+        <h1 className="font-bold text-xl md:text-2xl lg:text-3xl text-white">
           Here Are Some Quick Links For You 
         </h1>
       </div>
@@ -68,7 +68,7 @@ const DashboardWidget = ({ color, icon, title, value, subtitle, link }) => {
   return (
     <Link className="w-full" to={link}>
       <div
-        className={`widget w-full p-4 rounded-lg bg-white border-l-4 border-${color}-400`}
+        className={`widget w-full p-4 rounded-lg bg-[#f4f2f0] border-l-4 border-${color}-400`}
       >
         <div className="flex items-center">
           <div
