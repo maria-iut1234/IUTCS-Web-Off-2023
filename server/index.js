@@ -17,6 +17,7 @@ import registrationRoute from "./routes/registration.routes.js";
 //import regRoute from "./routes/registration.routes.js";
 
 const app = express();
+const PORT = process.env.PORT || 7000
 dotenv.config();
 
 const connection = async () => {
@@ -34,7 +35,7 @@ const connection = async () => {
 
 app.use(express.json()); 
 app.use(cookieParser());
-app.use(cors({origin:"http://localhost:5173", credentials: true}));
+app.use(cors({origin: process.env.BASE_URL_FRONT, credentials: true}));
 
 app.use("/iutcs/achievement", achievementRoute);
 app.use("/iutcs/activity", activityRoute);
@@ -53,7 +54,7 @@ app.use((err, req, res, next)=>{
   return res.status(errorStatus).send(errorMessage);
 });
 
-app.listen(7000, () => {
+app.listen(PORT, () => {
   connection();
   console.log("Backend server is running!");
 });
