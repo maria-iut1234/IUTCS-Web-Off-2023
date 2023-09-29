@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router";
+import newRequest from "../utils/newRequest.util";
+import configHeader from "../utils/configHeader.util";
 
 const AddAdminPage = () => {
   const [formData, setFormData] = useState({
@@ -10,10 +12,15 @@ const AddAdminPage = () => {
   });
   const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    //write your backend code here
-    console.log(formData);
+    try {
+      console.log(formData);
+      const response = await newRequest.post(`admin/createAdmin`, formData, configHeader);
+      window.alert("Admin Added Successfully");
+    } catch (error) {
+      console.error('Error adding Admin:', error);
+    }
   };
 
   const handleChange = (e) => {
