@@ -1,7 +1,8 @@
 import axios from "axios";
+import BASE_URL_BACK from "./helper.js";
 
 const newRequest = axios.create({
-    baseURL: "http://localhost:7000/iutcs/",
+    baseURL: `${BASE_URL_BACK}iutcs/`,
     withCredentials: true,
 });
 

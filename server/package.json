@@ -1,5 +1,6 @@
 {
   "name": "server",
+  "private": true,
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -11,6 +12,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "workspaces": ["client"],
   "dependencies": {
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
