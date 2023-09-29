@@ -1,4 +1,6 @@
 import Admin from '../models/admin.model.js';
+import jwt from 'jsonwebtoken';
+import dotenv from 'dotenv';
 
 // Create an Admin
 export const createAdmin = async (req, res, next) => {
@@ -42,6 +44,44 @@ export const getAdminById = async (req, res, next) => {
     }
 
     return res.status(200).json(admin);
+  } catch (err) {
+    next(err);
+  }
+};
+
+export const adminSignin = async (req, res, next) => {
+  try {
+    const { email, password } = req.body;
+
+    // Find the admin by email
+    const admin = await Admin.findOne({ email });
+
+    if (!admin) {
+      return res.status(404).json({ message: 'Admin not found' });
+    }
+
+    // Verify the password
+    // const isPasswordValid = await bcrypt.compare(password, admin.password);
+    const isPasswordValid = password === admin.password;
+
+    if (!isPasswordValid) {
+      return res.status(401).json({ message: 'Invalid password' });
+    }
+
+    // Create a JWT token
+    const token = jwt.sign(
+      {
+        adminId: admin._id,
+        isAdmin: true, // Include isAdmin field
+      },
+      process.env.JWT_SECRET_KEY,
+      {
+        expiresIn: '1h', // Adjust the token expiration time as needed
+      }
+    );
+
+    // Return the JWT token as a response
+    return res.status(200).json({ token });
   } catch (err) {
     next(err);
   }

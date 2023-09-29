@@ -40,9 +40,9 @@ export const getAllBlogs = async (req, res, next) => {
 // Get a single Blog Post by ID
 export const getBlogById = async (req, res, next) => {
   try {
-    const blog = await Blog.findOne({ blog_id: req.params.id });
+    const blog = await Blog.findById(req.params.id);
 
-    if (!blog) {  
+    if (!blog) {
       return res.status(404).json({ message: 'Blog post not found' });
     }
 

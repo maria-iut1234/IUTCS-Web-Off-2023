@@ -23,10 +23,11 @@ import EditAchievementPage from "./pages/EditAchievementPage";
 import EditCompetitionsPage from "./pages/EditCompetitionsPage";
 import AddAdminPage from "./pages/AddAdminPage";
 import EditExecutivePage from "./pages/EditExecutivePage";
+import AdminStatusChecker from "./components/AdminStatusChecker";
 
 function App() {
   //single point of checking for user type
-  const admin = true; 
+  const admin = AdminStatusChecker(); 
   return (
     <BrowserRouter>
       <Routes>

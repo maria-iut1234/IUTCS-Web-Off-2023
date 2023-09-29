@@ -1,12 +1,15 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import newRequest from "../utils/newRequest.util";
+import configHeader from "../utils/configHeader.util";
+import { useNavigate } from 'react-router-dom';
 
 function AdminSignIn() {
   const [formData, setFormData] = useState({
     email: "",
     password: "",
   });
-
+  const navigate = useNavigate();
   const { email, password } = formData;
 
   const handleChange = (e) => {
@@ -17,10 +20,21 @@ function AdminSignIn() {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Email:", formData.email);
-    console.log("password: ", formData.password);
+    try {
+      const response = await newRequest.post(`admin/adminSignin`, formData, configHeader);
+      // Assuming your server responds with a JWT token
+      const {token} = response.data;
+      // Store the token in localStorage or a more secure storage method
+      localStorage.setItem('adminToken', token);
+      console.log('User signed in!');
+      console.log(token);
+      window.location.reload();
+      navigate('/admin/home');
+    } catch (error) {
+      console.error('Error signing in:', error);
+    }
   };
 
   return (

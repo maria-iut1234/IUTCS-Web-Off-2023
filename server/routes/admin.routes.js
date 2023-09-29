@@ -3,6 +3,7 @@ import {
   createAdmin,
   getAllAdmins,
   getAdminById,
+  adminSignin,
   updateAdminById,
   deleteAdminById,
 } from '../controllers/admin.controller.js';
@@ -14,6 +15,8 @@ router.post('/createAdmin', createAdmin);
 router.get('/getAllAdmins', getAllAdmins);
 
 router.get('/getAdminById/:id', getAdminById);
+
+router.post('/adminSignin', adminSignin);
 
 router.put('/updateAdmin/:id', updateAdminById);
 
