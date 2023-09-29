@@ -5,11 +5,10 @@ import Achievement from '../models/achievement.model.js';
 export const createAchievement = async (req, res, next) => {
   try {
     // Retrieving data from the request body
-    const { announcement_id, title, awards, description, date, competition, teamMembers } = req.body;
+    const { title, awards, description, date, competition, teamMembers } = req.body;
 
     // Creating a new achievement
     const newAchievement = new Achievement({
-      announcement_id,
       title,
       awards,
       description,

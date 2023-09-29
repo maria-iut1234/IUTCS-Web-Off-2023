@@ -53,7 +53,7 @@ app.use((err, req, res, next)=>{
   return res.status(errorStatus).send(errorMessage);
 });
 
-app.listen(7000, () => {
+app.listen(3000, () => {
   connection();
   console.log("Backend server is running!");
 });

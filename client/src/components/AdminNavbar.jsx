@@ -13,9 +13,13 @@ const AdminNavbar = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  const handleLogout = () => {
-    
-  }
+  const handleSignOut = () => {
+    // Clear the JWT token from local storage
+    localStorage.removeItem('adminToken');
+    navigate('/home');
+    // Redirect to the sign-in page or any other appropriate page
+    // Example: navigate('/admin/signin');
+  };
 
   return (
     <div
@@ -77,7 +81,7 @@ const AdminNavbar = () => {
             </li>
 
             <li>
-              <Link onClick={handleLogout} className={`text-[#02e1dc] ${linkClass}`}>
+              <Link onClick={handleSignOut} className={`text-[#02e1dc] ${linkClass}`}>
                 <div>
                   <div className="z-10" onClick={() => {}}>
                     <button
