@@ -1,27 +1,27 @@
 import React from "react";
 import footer_logo from "../assets/IUTCS_logo_transparent_light.png";
+import { useNavigate } from "react-router";
 
 function Footer() {
+  const navigate = useNavigate();
   return (
     <footer className="bg-gray-900">
       <div className="container px-6 py-12 mx-auto">
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-y-10 lg:grid-cols-4">
-          <div className="sm:col-span-2">
+          <div className="sm:col-span-2 items-center">
             <h1 className="max-w-lg text-xl font-semibold tracking-tight xl:text-2xl text-white">
-              Email us any suggestions or report any problems.
+              One of us? Step into the secret portal!
             </h1>
 
-            <div className="flex flex-col mx-auto mt-6 space-y-3 md:space-y-0 md:flex-row">
-              <input
-                id="email"
-                type="text"
-                className="px-4 py-2 border rounded-md bg-gray-900 text-gray-300 border-gray-600 focus:border-blue-400 focus:border-blue-300 focus:outline-none focus:ring focus:ring-opacity-40 focus:ring-blue-300"
-                placeholder="Email Address"
-              />
-
-              <button className="w-full px-6 py-2.5 text-sm font-medium tracking-wider text-white transition-colors duration-300 transform md:w-auto md:mx-4 focus:outline-none bg-gray-800 rounded-lg hover:bg-gray-700 focus:ring focus:ring-gray-300 focus:ring-opacity-80">
-                Go
-              </button>
+            <div className="flex flex-col w-2/6 md:w-2/6 lg:w-1/3 justify-start" onClick={()=> navigate("/admin/signin")}>
+              <div className="z-10">
+                <button
+                  type="buton"
+                  className="lg:px-12 md:px-2 px-2 mt-6 relative -top-1 -left-1 bg-[#F4F2F0] py-2.5 px-5 font-medium text-xl text-[#373234] transition-all before:absolute before:top-1 before:left-1 before:-z-[1] before:h-full before:w-full before:border-2 before:border-[#02E1DC] border-[#02E1DC] before:transition-all before:content-[''] hover:top-0 hover:left-0 before:hover:top-0 before:hover:left-0 w-full"
+                >
+                  Sign In
+                </button>
+              </div>
             </div>
           </div>
 
