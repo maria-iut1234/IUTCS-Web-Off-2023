@@ -1,3 +1,3 @@
-const BASE_URL_BACK = "http://localhost:7000/"
+const BASE_URL_BACK = "https://iutcs-api.onrender.com"
 
 export default BASE_URL_BACK;
