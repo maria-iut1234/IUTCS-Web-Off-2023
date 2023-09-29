@@ -3,8 +3,9 @@ import { Link } from "react-router-dom";
 import newRequest from "../utils/newRequest.util";
 import configHeader from "../utils/configHeader.util";
 import { useNavigate } from 'react-router-dom';
+import AdminStatusChecker from "../utils/AdminStatusChecker.util";
 
-function AdminSignIn() {
+function AdminSignIn({setAdmin}) {
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -30,7 +31,8 @@ function AdminSignIn() {
       localStorage.setItem('adminToken', token);
       console.log('User signed in!');
       console.log(token);
-      window.location.reload();
+      // window.location.reload();
+      setAdmin(AdminStatusChecker());
       navigate('/admin/home');
     } catch (error) {
       console.error('Error signing in:', error);
