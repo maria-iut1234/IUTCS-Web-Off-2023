@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import jwtDecode from 'jwt-decode';
 
 //css file import
 import './App.css'
@@ -23,11 +24,12 @@ import EditAchievementPage from "./pages/EditAchievementPage";
 import EditCompetitionsPage from "./pages/EditCompetitionsPage";
 import AddAdminPage from "./pages/AddAdminPage";
 import EditExecutivePage from "./pages/EditExecutivePage";
-import AdminStatusChecker from "./components/AdminStatusChecker";
+import AdminStatusChecker from "./utils/AdminStatusChecker.util";
 
 function App() {
-  //single point of checking for user type
-  const admin = AdminStatusChecker(); 
+  const [admin, setAdmin] = useState(AdminStatusChecker());
+  
+   
   return (
     <BrowserRouter>
       <Routes>
@@ -52,7 +54,7 @@ function App() {
         <Route path="/admin/add" element={<AdminUser admin={admin}><AddAdminPage  admin={admin}/></AdminUser>} />
 
         {/* Public routes */}
-        <Route path="/admin/signin" element={<PublicUser admin={admin}><AdminSignIn  admin={admin}/></PublicUser>} />
+        <Route path="/admin/signin" element={<PublicUser admin={admin}><AdminSignIn  admin={admin} setAdmin={setAdmin}/></PublicUser>} />
         <Route path="/" element={<PublicUser admin={admin}><LandingPage  admin={admin}/></PublicUser>} />
         <Route path="/aboutus" element={<PublicUser admin={admin}><AboutUsPage  admin={admin}/></PublicUser>} />
         <Route path="/executives" element={<PublicUser admin={admin}><ExecutivesInfoPage  admin={admin}/></PublicUser>} />
