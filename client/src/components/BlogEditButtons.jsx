@@ -22,7 +22,7 @@ const BlogEditButtons = ({ blogData }) => {
             "Are you sure you want to delete the post? You cannot undo this action!"
           }
           redButtonText={"Delete"}
-          redButtonFunction={() => {handleDelete(blogData.blogId)}}
+          redButtonFunction={() => {handleDelete(blogData._id)}}
           normalButtonText={"Cancel"}
           normalButtonFunction={() => setVisibleModal(false)}
           setModalVisibility={setVisibleModal}

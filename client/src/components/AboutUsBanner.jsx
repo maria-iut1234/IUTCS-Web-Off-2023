@@ -7,7 +7,7 @@ const AboutUsBanner = ({admin}) => {
     return (
         <>
             <div className='min-h-[45vh] items-center lg: min-h-[30vh]  flex:items-center pt-6'>
-                <div className='container mx-auto'>
+                <div className='container mx-auto md:px-2 lg:px-4'>
                     <div className='flex w-screen max-w-[90vw] flex-col items-center gap-y-8 lg:flex-row lg:items-center lg:gap-x-12'>
                         {/*text goes here*/}
                         <div className='flex-1 text-center text-white lg:text-left'>

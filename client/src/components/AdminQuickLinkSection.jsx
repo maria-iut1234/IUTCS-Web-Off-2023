@@ -29,9 +29,9 @@ const AdminQuickLinkdiv = () => {
               color="blue"
               icon={<MdOutlineLeaderboard />}
               title="Customers"
-              value="Competitions"
+              value="Add A Competition"
               link="/admin/competitions/create"
-              subtitle="Add A Competition"
+              subtitle="Add A New Competition"
             />
             <DashboardWidget
               color="yellow"
