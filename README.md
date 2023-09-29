@@ -6,5 +6,5 @@ The IUTCS website will serve as an all-encompassing platform that promotes the s
 
 
 ```bash
-Admin Email: legamers4532@gmail.com
-Password: admin_iutcs@gmail.com
+Admin Email: nazmulhossain@iut-dhaka.edu
+Admin Password: password
