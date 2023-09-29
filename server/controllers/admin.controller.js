@@ -1,23 +1,62 @@
 import Admin from '../models/admin.model.js';
 import jwt from 'jsonwebtoken';
 import dotenv from 'dotenv';
+import { ErrorHandler } from '../utils/ErrorHandler.js';
+import { sendMail } from '../utils/sendMail.js';
+import bcrypt from 'bcrypt';
 
 // Create an Admin
 export const createAdmin = async (req, res, next) => {
   try {
-    const { admin_id, username, email, password, role } = req.body;
+    const { name, email, image, password } = req.body;
+    const userEmail = await Admin.findOne({ email });
+    if (userEmail) {
+      // Send a custom error response with status 501
+      return res.status(501).json({
+        success: false,
+        message: "Admin already exists!",
+      });
+    }
 
-    const newAdmin = new Admin({
-      admin_id,
-      username,
-      email,
-      password,
-      role,
+    const domain = email.split('@')[1];
+
+    if (domain !== 'iut-dhaka.edu') {
+      // Send a custom error response with status 502
+      return res.status(509).json({
+        success: false,
+        message: "Not an IUT email!",
+      });
+    }
+    // Hash the password
+    const saltRounds = 10; // You can adjust the number of salt rounds as needed
+    const hashedPassword = await bcrypt.hash(password, saltRounds);
+
+    // Set the hashed password
+
+    const admin = new Admin({
+      username: name,
+      email: email,
+      password: hashedPassword,
+      image: image,
+      role: "Admin",
     });
+    // console.log(admin);
+    const savedAdmin = await admin.save();
+    try {
+      await sendMail({
+        email: admin.email,
+        subject: "Your New Account is Created",
+        message: `Hello ${admin.username}. Your new account has been created.`,
+      });
 
-    const savedAdmin = await newAdmin.save();
+      res.status(201).json({
+        success: true,
+        message: `Mail sent to:- ${admin.email}!`,
+      });
 
-    return res.status(200).json(savedAdmin);
+    } catch (error) {
+      return next(new ErrorHandler(error.message, 500));
+    }
   } catch (err) {
     next(err);
   }
@@ -61,8 +100,8 @@ export const adminSignin = async (req, res, next) => {
     }
 
     // Verify the password
-    // const isPasswordValid = await bcrypt.compare(password, admin.password);
-    const isPasswordValid = password === admin.password;
+    const isPasswordValid = await bcrypt.compare(password, admin.password);
+    // const isPasswordValid = password === admin.password;
 
     if (!isPasswordValid) {
       return res.status(401).json({ message: 'Invalid password' });
