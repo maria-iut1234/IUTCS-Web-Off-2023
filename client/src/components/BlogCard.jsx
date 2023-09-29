@@ -1,8 +1,8 @@
 import React from "react";
 
-const BlogCard = ({ admin, blogId, title, description, author, date, tags, image, onClick }) => {
-  const blogLink = admin ? `/admin/blogs/${blogId}` : `/blogs/${blogId}`
-
+const BlogCard = ({ admin, id, blogId, title, description, author, date, tags, image, onClick }) => {
+  const blogLink = admin ? `/admin/blogs/${id}` : `/blogs/${id}`
+  console.log(blogLink)
 
 
   return (

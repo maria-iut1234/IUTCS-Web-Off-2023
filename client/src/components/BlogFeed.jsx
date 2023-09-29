@@ -14,6 +14,7 @@ const BlogFeed = ({admin}) => {
     
     newRequest.get("blog/getAllBlogs").then((response) => {
         setBlogs(response.data);
+        console.log(blogs);
       })
       .catch((error) => {
         console.error(error.response.data);
@@ -24,7 +25,7 @@ const BlogFeed = ({admin}) => {
 
   return (
     <>
-      <div className="max-w-full mx-auto">
+      <div className="w-full mx-auto">
         <main className="mt-2">
           <PageHeader
             imageUrl={
@@ -59,13 +60,14 @@ const BlogFeed = ({admin}) => {
             </div>
           </div>)}
 
-          <div className="block  px-2 mb-10">
+          <div className="block px-6 mb-10">
             <div className="w-full">
 
               {/* Map over the fetched blogs and render BlogCard components */}
               {blogs.map((blog) => (   
                 <BlogCard
                   key={blog.blog_id}
+                  id={blog._id}
                   blogId={blog.blog_id}
                   imageURL={blog.image}
                   title={blog.title}
